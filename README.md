@@ -1,135 +1,124 @@
-# 🎮 NextJS - School Games
+# BukuMedia — School Games
 
-**NextJS - School Games** is an interactive, web-based learning platform built with **Next.js**. It provides a series of educational game levels designed to help students in learning and self-reflection, migrating from a legacy Java-based system to a modern web architecture.
+> Interactive gamified educational platform and teacher gradebook built with Next.js 14, React 18, and MongoDB.
 
-![Status](https://img.shields.io/badge/Status-Active_Development-success?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)
-![MongoDB](https://img.shields.io/badge/MongoDB-Latest-47A248?style=for-the-badge&logo=mongodb)
+BukuMedia School Games is a full-stack educational web application designed for interactive classroom learning. Migrated and upgraded from a legacy Java desktop app to modern Next.js 14 (App Router) and MongoDB, it provides 30 distinct interactive mini-game levels (Word Search, Canvas Drawing, Memory Cards, Pattern Matching, Logic Puzzles), a student adventure map with level unlocks, and a dedicated teacher administration portal for student score tracking and XLSX grade exports.
 
----
-
-## 📸 Application Showcase
-
-Explore the interactive levels and management dashboards of **NextJS - School Games**.
-
-### Core Interfaces
-| | |
-|:---:|:---:|
-| ![Student Dashboard](public/screenshots/Student%20Dashboard%20Page.png)<br>**Student Dashboard** | ![Teacher Dashboard](public/screenshots/Dashboard%20Guru%20Page.png)<br>**Teacher Dashboard** |
-| ![Level Selection](public/screenshots/Student%20Dashboard%20Level%20Page.png)<br>**Level Selection** | ![Authentication](public/screenshots/login.png)<br>**Authentication** |
-
-### Mobile Support
-| | |
-|:---:|:---:|
-| ![Mobile Login](public/screenshots/Mobile%20Login%20Page.png)<br>**Mobile Login** | ![Mobile Dashboard](public/screenshots/Mobile%20Student%20Dashboard%20Page.png)<br>**Mobile Dashboard** |
-
-### Level Gallery
-| | | |
-|:---:|:---:|:---:|
-| ![Level 1](public/screenshots/level-1.png)<br>**Level 1: Word Search** | ![Level 2](public/screenshots/level-2.png)<br>**Level 2: Scoop of Hope** | ![Level 3](public/screenshots/level-3.png)<br>**Level 3: Pohon Harapan** |
-| ![Level 4](public/screenshots/level-4.png)<br>**Level 4: Mimpi Terbesar** | ![Level 5](public/screenshots/level-5.png)<br>**Level 5: Anxiety Elixir** | ![Level 6](public/screenshots/level-6.png)<br>**Level 6: Gambar Ekspresi** |
-| ![Level 7](public/screenshots/level-7.png)<br>**Level 7: Balon Harapan** | ![Level 8](public/screenshots/level-8.png)<br>**Level 8: Refleksi Diri** | ![Level 9](public/screenshots/level-9.png)<br>**Level 9** |
-| ![Level 10](public/screenshots/level-10.png)<br>**Level 10: Rings** | ![Level 11](public/screenshots/level-11.png)<br>**Level 11** | ![Level 12](public/screenshots/level-12.png)<br>**Level 12: Refleksi Cermin** |
-| ![Level 13](public/screenshots/level-13.png)<br>**Level 13: Ekspresi Bebas** | ![Level 14](public/screenshots/level-14.png)<br>**Level 14: Refleksi** | ![Level 15](public/screenshots/level-15.png)<br>**Level 15: Imajinasi** |
-| ![Level 16](public/screenshots/level-16.png)<br>**Level 16: Eksplorasi** | ![Level 17](public/screenshots/level-17.png)<br>**Level 17: Rencana** | ![Level 18](public/screenshots/level-18.png)<br>**Level 18: Lingkar Waktu** |
-| ![Level 19](public/screenshots/level-19.png)<br>**Level 19: Soundtrack** | ![Level 20](public/screenshots/level-20.png)<br>**Level 20: Peta Bersyukur** | ![Level 21](public/screenshots/level-21.png)<br>**Level 21: Are You Okay?** |
-| ![Level 22](public/screenshots/level-22.png)<br>**Level 22: Kompas Tujuan** | ![Level 23](public/screenshots/level-23.png)<br>**Level 23: Surat Masa Depan** | ![Level 24](public/screenshots/level-24.png)<br>**Level 24: Tangga Perubahan** |
-| ![Level 25](public/screenshots/level-25.png)<br>**Level 25** | ![Level 26](public/screenshots/level-26.png)<br>**Level 26** | ![Level 27](public/screenshots/level-27.png)<br>**Level 27** |
-| ![Level 28](public/screenshots/level-28.png)<br>**Level 28** | ![Level 29](public/screenshots/level-29.png)<br>**Level 29** | ![Level 30](public/screenshots/level-30.png)<br>**Level 30** |
+[![Live Demo](https://img.shields.io/badge/Demo-bukudigitalamal.vercel.app-10B981?style=flat-square&logo=vercel&logoColor=white)](https://bukudigitalamal.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
+[![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![MongoDB](https://img.shields.io/badge/Database-MongoDB_Mongoose-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![NextAuth.js](https://img.shields.io/badge/Auth-NextAuth.js_v4-blueviolet?style=flat-square)](https://next-auth.js.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 ---
 
-## 🚀 Features Overview
+## Live Production
 
-### 🎮 Gamified Learning
-*   **30 Interactive Levels**: Diverse game types including Word Search, Drawing, Reflection Input, and Drag & Drop.
-*   **Progress Tracking**: Students can track their level completion and achievements in real-time.
-*   **Visual Reflection**: Tools designed for emotional expression and self-discovery.
-
-### 👨‍🏫 Administrative Tools
-*   **Teacher Dashboard**: Comprehensive monitor to track student activities, progress, and detailed answers.
-*   **Data Management**: Export student results and performance data directly to Excel format.
-*   **User Management**: Role-based access control for Students and Teachers via NextAuth.
-
-### 📱 Modern Experience
-*   **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
-*   **Real-time Updates**: Instant feedback and state persistence using MongoDB.
+- **URL:** [https://bukudigitalamal.vercel.app/](https://bukudigitalamal.vercel.app/)
+- **Deployment:** Vercel Edge Platform
+- **Database:** MongoDB Atlas via Mongoose ORM
 
 ---
 
-## 🛠️ Tech Stack
+## Showcase
 
-### Frontend & Framework
-*   **Framework**: Next.js 14 (App Router)
-*   **Language**: TypeScript
-*   **Styling**: Tailwind CSS
-*   **Icons**: Lucide React
-
-### Backend & Infrastructure
-*   **Database**: MongoDB (via Mongoose/Native Driver)
-*   **Authentication**: NextAuth.js
-*   **Legacy**: Original Java source included for reference.
+| Desktop Interface (MacBook Pro M4) | Mobile Interface (iPhone 16 Pro) |
+| :---: | :---: |
+| **School Games Portal Home Desktop**<br>![School Games Portal Desktop](screenshots/School%20Games%20Portal%20Desktop.png) | **School Games Portal Home Mobile**<br>![School Games Portal Mobile](screenshots/School%20Games%20Portal%20Mobile.png) |
+| **Interactive Word Search Arena Desktop**<br>![Word Search Arena Desktop](screenshots/Word%20Search%20Game%20Arena%20Desktop.png) | **Interactive Word Search Arena Mobile**<br>![Word Search Arena Mobile](screenshots/Word%20Search%20Game%20Arena%20Mobile.png) |
+| **Drawing & Sketching Activity Desktop**<br>![Drawing Activity Desktop](screenshots/Drawing%20Canvas%20Activity%20Desktop.png) | **Drawing & Sketching Activity Mobile**<br>![Drawing Activity Mobile](screenshots/Drawing%20Canvas%20Activity%20Mobile.png) |
+| **Unified Role Auth Portal Desktop**<br>![Auth Portal Desktop](screenshots/Unified%20Role%20Auth%20Portal%20Desktop.png) | **Unified Role Auth Portal Mobile**<br>![Auth Portal Mobile](screenshots/Unified%20Role%20Auth%20Portal%20Mobile.png) |
+| **Interactive Project Showcase Desktop**<br>![Project Showcase Desktop](screenshots/Interactive%20Project%20Showcase%20Desktop.png) | **Interactive Project Showcase Mobile**<br>![Project Showcase Mobile](screenshots/Interactive%20Project%20Showcase%20Mobile.png) |
 
 ---
 
-## 📂 Project Structure
+## Core Features
 
-```bash
-/
-├── app/                # Next.js App Router (Pages & API)
-│   ├── (auth)/        # Authentication routes
-│   ├── dashboard/      # User & Admin dashboards
-│   └── levels/         # Game levels implementation
-├── lib/               # Shared utilities, DB config, and models
-├── public/            # Static assets and screenshots
-├── legacy-java/       # Original Java-based project source
-├── tailwind.config.ts # Styling configuration
-└── tsconfig.json      # TypeScript configuration
+- **30 Progressive Game Levels (`/level/[id]`)**: Interactive educational puzzles including Word Search grids, Canvas coloring & sketching, Memory matching, and Math logic challenges.
+- **Student Progress Map (`/dashboard/siswa`)**: Sequential level-unlock progression tree where students earn stars and unlock higher tiers as they complete challenges.
+- **Teacher Analytics & Gradebook (`/dashboard/guru`)**: Comprehensive dashboard for educators to monitor student scores, level completion times, and export report cards to Microsoft Excel (`.xlsx`).
+- **Role-Based Authentication (`/login`)**: NextAuth.js credential provider distinguishing between Teacher (`GURU`) and Student (`SISWA`) roles with session management.
+- **Full-Stack Next.js 14 Architecture**: API Routes (`/api/levels`, `/api/users`, `/api/awards`) backed by Mongoose schemas with atomic score updating.
+- **Legacy Java Modernization**: Preserves the curriculum and gameplay mechanics of the original Java Swing desktop client (`legacy-java/`) rebuilt as a web application.
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Details |
+| :--- | :--- | :--- |
+| **Framework** | Next.js `14.2.35` | App Router, Server Actions, and API Route endpoints |
+| **UI Library** | React `18` | Functional components with stateful interactive mini-games |
+| **Database** | MongoDB `7.0` | Cloud document database for user profiles and level scores |
+| **ORM** | Mongoose `8.0` | Schema models for Users, Levels, Awards, and Transactions |
+| **Authentication** | NextAuth.js `4.24.5` | Role-based JWT session authentication |
+| **Export Engine** | SheetJS (xlsx) `0.18.5` | Client and server-side grade report generation |
+| **Styling** | Tailwind CSS `3.3.0` | Vibrant, kid-friendly palette and responsive grid layouts |
+
+---
+
+## Project Structure
+
+```text
+nextjs-school-games/
+├── app/
+│   ├── level/[id]/          # Dynamic educational game routes (Levels 1-30)
+│   ├── dashboard/
+│   │   ├── guru/            # Teacher analytics and student score tracking
+│   │   └── siswa/           # Student level progression adventure map
+│   ├── login/               # Unified role authentication portal
+│   ├── portfolio/           # Interactive showcase and curriculum overview
+│   ├── api/                 # NextAuth, level scoring, and seed endpoints
+│   ├── components/          # 30 individual LevelGame React components
+│   └── page.tsx             # Public landing portal
+├── lib/                     # Database connection and Mongoose models
+├── legacy-java/             # Original Java Swing desktop application source
+├── raw_screenshots/         # High-resolution production screen captures
+└── screenshots/             # MacBook Pro M4 & iPhone 16 Pro showcase mockups
 ```
 
 ---
 
-## 📦 Getting Started
+## Getting Started & Local Development
 
 ### Prerequisites
-*   **Node.js 18+**
-*   **MongoDB Instance** (Local or Atlas)
-*   **.env file** with necessary credentials (DATABASE_URL, NEXTAUTH_SECRET)
 
-### Installation & Development
+- **Node.js**: Version 18.17.0 or higher
+- **MongoDB**: Local MongoDB instance or MongoDB Atlas connection URI
 
-1.  **Clone the repository**
-2.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
-3.  **Environment Variables Setup**
-    Create a new file named `.env` in the root of the project and add your database configuration. You can copy the provided example file:
-    ```bash
-    cp .env.example .env
-    ```
-    Open `.env` and configure your MongoDB connection string:
-    ```env
-    MONGODB_URI=your_mongodb_connection_string_here
-    ```
-4.  **Run Development Server**
-    ```bash
-    npm run dev
-    ```
-    *Open [http://localhost:3000](http://localhost:3000) to view the application.*
+### Installation
 
-### 🔐 Default Credentials
-If you have run the seed API (`/api/seed`), you can use the following default accounts:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/widifirmaan/nextjs-school-games.git
+   cd nextjs-school-games
+   ```
 
-| Role | Username | Password |
-| :--- | :--- | :--- |
-| **Teacher** | `guru` | `password` |
-| **Student** | `siswa` | `password` |
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env.local` and set your MongoDB URI and NextAuth Secret:
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/school_games
+   NEXTAUTH_SECRET=your-random-secret-key
+   NEXTAUTH_URL=http://localhost:3000
+   ```
+
+4. **Run local dev server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## 👥 Authors
+## License
 
-Developed by **Widi Firmaan**.
+This project is licensed under the [MIT License](LICENSE).

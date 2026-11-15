@@ -54,7 +54,6 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 | **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route middleware protection |
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client and server-side grade report compilation and XLSX binary export |
 | **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
-| **Deployment** | Vercel Edge Platform | Edge-accelerated serverless deployment with automated CI/CD |
 
 ---
 

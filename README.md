@@ -10,7 +10,6 @@ BukuMedia School Games is a full-stack educational web application designed for 
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB_Mongoose-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![NextAuth.js](https://img.shields.io/badge/Auth-NextAuth.js_v4-blueviolet?style=flat-square)](https://next-auth.js.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 ---
 
@@ -36,11 +35,12 @@ BukuMedia School Games is a full-stack educational web application designed for 
 
 ## Features
 
-- **30 Progressive Interactive Game Levels (`/level/[id]`)**: Comprehensive suite of modular gamified activities including Word Search matrices, HTML5 Canvas freehand sketching, Memory matching cards, and Logic arithmetic puzzles.
-- **Student Adventure Progression Map (`/dashboard/siswa`)**: Linear level unlock journey dynamically rewarding completed tasks with star ratings and unlocking successive chapters.
+- **30 Progressive Interactive Game Levels (`/level/[id]`)**: Comprehensive suite of modular gamified activities including Word Search matrices, HTML5 Canvas freehand sketching, Memory matching cards, Ice Cream color pairing, and Logic arithmetic puzzles.
+- **Student Adventure Progression Map (`/dashboard/siswa`)**: Linear level unlock journey dynamically rewarding completed tasks with star ratings, badge rewards, and unlocking successive chapters.
 - **Teacher Gradebook & Analytics (`/dashboard/guru`)**: Central educator portal tracking student engagement, individual completion times, aggregate classroom scores, and 1-click Excel spreadsheet export via SheetJS (`.xlsx`).
 - **Unified Role-Based Authentication (`/login`)**: Secure credential authentication via NextAuth.js distinguishing between Teacher (`GURU`) administrative rights and Student (`SISWA`) gameplay sessions.
-- **Full-Stack Next.js 14 API Architecture**: Modular REST endpoints (`/api/levels`, `/api/users`, `/api/awards`) backed by Mongoose schemas with atomic score increments.
+- **Full-Stack Next.js 14 API Architecture**: Modular REST endpoints (`/api/levels/submit`, `/api/users`, `/api/seed`, `/api/awards/clear`) backed by Mongoose schemas with atomic score increments.
+- **Automated Student & Curriculum Seeder (`/api/seed`)**: Instant bootstrap endpoint seeding test student accounts, class cohorts, and curriculum metadata.
 - **Legacy Desktop to Web Modernization**: Faithful web reimplementation preserving the original curriculum and gameplay mechanics of the legacy Java Swing client (`legacy-java/`).
 
 ---
@@ -115,9 +115,3 @@ Open [http://localhost:3000](http://localhost:3000) in your web browser.
 ## Author
 
 Developed by **[Widi Firmansyah](https://widifirmaan.web.id)**.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).

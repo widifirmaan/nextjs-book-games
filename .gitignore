@@ -39,3 +39,5 @@ next-env.d.ts
 /legacy-java/.mvn
 /legacy-java/user-data
 .env
+
+raw_screenshots/

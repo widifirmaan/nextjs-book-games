@@ -34,35 +34,34 @@ BukuMedia School Games is a full-stack educational web application designed for 
 
 ---
 
-## Core Features
+## Features
 
-- **30 Progressive Game Levels (`/level/[id]`)**: Interactive educational puzzles including Word Search grids, Canvas coloring & sketching, Memory matching, and Math logic challenges.
-- **Student Progress Map (`/dashboard/siswa`)**: Sequential level-unlock progression tree where students earn stars and unlock higher tiers as they complete challenges.
-- **Teacher Analytics & Gradebook (`/dashboard/guru`)**: Comprehensive dashboard for educators to monitor student scores, level completion times, and export report cards to Microsoft Excel (`.xlsx`).
-- **Role-Based Authentication (`/login`)**: NextAuth.js credential provider distinguishing between Teacher (`GURU`) and Student (`SISWA`) roles with session management.
-- **Full-Stack Next.js 14 Architecture**: API Routes (`/api/levels`, `/api/users`, `/api/awards`) backed by Mongoose schemas with atomic score updating.
-- **Legacy Java Modernization**: Preserves the curriculum and gameplay mechanics of the original Java Swing desktop client (`legacy-java/`) rebuilt as a web application.
+- **30 Progressive Interactive Game Levels (`/level/[id]`)**: Comprehensive suite of modular gamified activities including Word Search matrices, HTML5 Canvas freehand sketching, Memory matching cards, and Logic arithmetic puzzles.
+- **Student Adventure Progression Map (`/dashboard/siswa`)**: Linear level unlock journey dynamically rewarding completed tasks with star ratings and unlocking successive chapters.
+- **Teacher Gradebook & Analytics (`/dashboard/guru`)**: Central educator portal tracking student engagement, individual completion times, aggregate classroom scores, and 1-click Excel spreadsheet export via SheetJS (`.xlsx`).
+- **Unified Role-Based Authentication (`/login`)**: Secure credential authentication via NextAuth.js distinguishing between Teacher (`GURU`) administrative rights and Student (`SISWA`) gameplay sessions.
+- **Full-Stack Next.js 14 API Architecture**: Modular REST endpoints (`/api/levels`, `/api/users`, `/api/awards`) backed by Mongoose schemas with atomic score increments.
+- **Legacy Desktop to Web Modernization**: Faithful web reimplementation preserving the original curriculum and gameplay mechanics of the legacy Java Swing client (`legacy-java/`).
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology | Details |
+| Category | Technologies | Purpose |
 | :--- | :--- | :--- |
-| **Framework** | Next.js `14.2.35` | App Router, Server Actions, and API Route endpoints |
-| **UI Library** | React `18` | Functional components with stateful interactive mini-games |
-| **Database** | MongoDB `7.0` | Cloud document database for user profiles and level scores |
-| **ORM** | Mongoose `8.0` | Schema models for Users, Levels, Awards, and Transactions |
-| **Authentication** | NextAuth.js `4.24.5` | Role-based JWT session authentication |
-| **Export Engine** | SheetJS (xlsx) `0.18.5` | Client and server-side grade report generation |
-| **Styling** | Tailwind CSS `3.3.0` | Vibrant, kid-friendly palette and responsive grid layouts |
+| **Core Framework** | Next.js `14.2.35`, React `18` | App Router, Server Components, and API Route backend endpoints |
+| **Database & ORM** | MongoDB `7.0`, Mongoose `8.0` | Cloud document database and typed schema definitions for Users and Levels |
+| **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route middleware protection |
+| **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client and server-side grade report compilation and XLSX binary export |
+| **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
+| **Deployment** | Vercel Edge Platform | Edge-accelerated serverless deployment with automated CI/CD |
 
 ---
 
 ## Project Structure
 
-```text
-nextjs-school-games/
+```bash
+/
 ├── app/
 │   ├── level/[id]/          # Dynamic educational game routes (Levels 1-30)
 │   ├── dashboard/
@@ -75,8 +74,8 @@ nextjs-school-games/
 │   └── page.tsx             # Public landing portal
 ├── lib/                     # Database connection and Mongoose models
 ├── legacy-java/             # Original Java Swing desktop application source
-├── raw_screenshots/         # High-resolution production screen captures
-└── screenshots/             # MacBook Pro M4 & iPhone 16 Pro showcase mockups
+├── screenshots/             # MacBook Pro M4 & iPhone 16 Pro showcase mockups
+└── README.md
 ```
 
 ---
@@ -88,34 +87,34 @@ nextjs-school-games/
 - **Node.js**: Version 18.17.0 or higher
 - **MongoDB**: Local MongoDB instance or MongoDB Atlas connection URI
 
-### Installation
+### Installation & Setup
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/widifirmaan/nextjs-school-games.git
-   cd nextjs-school-games
-   ```
+> **Environment Variables:** Create a `.env.local` file in the root directory before running the application:
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/widifirmaan/nextjs-school-games.git
+cd nextjs-school-games
 
-3. **Configure Environment Variables**:
-   Copy `.env.example` to `.env.local` and set your MongoDB URI and NextAuth Secret:
-   ```env
-   MONGODB_URI=mongodb://localhost:27017/school_games
-   NEXTAUTH_SECRET=your-random-secret-key
-   NEXTAUTH_URL=http://localhost:3000
-   ```
+# 2. Install project dependencies
+npm install
 
-4. **Run local dev server**:
-   ```bash
-   npm run dev
-   ```
+# 3. Configure environment variables in .env.local:
+# MONGODB_URI=mongodb://localhost:27017/school_games
+# NEXTAUTH_SECRET=your-random-secret-key
+# NEXTAUTH_URL=http://localhost:3000
 
-5. **Open in browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000).
+# 4. Start local Next.js development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your web browser.
+
+---
+
+## Author
+
+Developed by **[Widi Firmansyah](https://widifirmaan.web.id)**.
 
 ---
 

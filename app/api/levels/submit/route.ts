@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         let d = new Date();
         for (let i = 0; i < 7; i++) {
             const dateStr = d.toISOString().split('T')[0];
-            if (user.dailySubmissions.get(dateStr) && user.dailySubmissions.get(dateStr) > 0) {
+            if ((user.dailySubmissions.get(dateStr) || 0) > 0) {
                 streak++;
             }
             d.setDate(d.getDate() - 1);

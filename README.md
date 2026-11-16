@@ -1,14 +1,14 @@
 # BukuMedia — School Games
 
-> Interactive gamified educational platform and teacher gradebook built with Next.js 14, React 18, and MongoDB.
+> Interactive gamified educational platform and teacher gradebook built with Next.js 14, React 18, and Cloudflare D1.
 
-BukuMedia School Games is an educational web application built with Next.js 14 (App Router) and MongoDB, migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
+BukuMedia School Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
 
 [![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://book-games.widifirmaan.web.id)
 [![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://book-games.widifirmaan.web.id)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![MongoDB](https://img.shields.io/badge/Database-MongoDB_Mongoose-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Cloudflare D1](https://img.shields.io/badge/Database-Cloudflare_D1-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/d1/)
 [![NextAuth.js](https://img.shields.io/badge/Auth-NextAuth.js_v4-blueviolet?style=flat-square)](https://next-auth.js.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
@@ -17,8 +17,8 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 ## Live Production
 
 - **URL:** [https://book-games.widifirmaan.web.id](https://book-games.widifirmaan.web.id)
-- **Deployment:** Cloudflare Workers with OpenNext (`@opennextjs/cloudflare`) & Edge Asset Routing
-- **Database:** MongoDB Atlas via Mongoose ORM
+- **Platform:** Cloudflare Workers with OpenNext (`@opennextjs/cloudflare`)
+- **Database:** Cloudflare D1 Serverless SQL (`school-games-db`)
 
 ---
 
@@ -40,8 +40,8 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 - **Student Adventure Progression Map (`/dashboard/siswa`)**: Sequential level unlock journey dynamically displaying completed chapters, active levels, and unlocked achievement badges (`CHAPTER_1_COMPLETE` through `CHAPTER_5_COMPLETE`, and `CONSISTENT_WORKER` 7-day streaks).
 - **Teacher Gradebook & Analytics (`/dashboard/guru`)**: Central educator management portal with school and class filtering, student progress tables, detailed level submission inspection, and 1-click Excel spreadsheet export via SheetJS (`.xlsx`).
 - **Unified Role-Based Authentication (`/login`)**: Secure credential authentication via NextAuth.js separating Teacher (`GURU`) administrative rights from Student (`SISWA`) gameplay sessions.
-- **Full-Stack REST Architecture**: Modular endpoints (`/api/levels/submit`, `/api/levels/[id]`, `/api/users`, `/api/users/[id]`, `/api/seed`, `/api/awards/clear`) backed by Mongoose with serialized level response maps.
-- **Automated Database Seeder (`/api/seed`)**: Bootstrap endpoint initializing demo teacher (`guru` / `password`) and student (`siswa` / `password`) accounts with default school profiles.
+- **Full-Stack REST Architecture**: Modular endpoints (`/api/levels/submit`, `/api/levels/[id]`, `/api/users`, `/api/users/[id]`, `/api/seed`, `/api/awards/clear`) backed by Cloudflare D1 SQL with serialized level response maps.
+- **Automated Database Seeder (`/api/seed` & `schema.sql`)**: Bootstrap endpoint and SQL schema initializing demo teacher (`guru` / `password`) and student (`siswa` / `password`) accounts with default school profiles.
 - **Legacy Desktop to Web Modernization**: Faithful web reimplementation preserving the curriculum, game logic, and asset structure of the legacy Java Swing desktop client (`legacy-java/`).
 
 ---
@@ -51,7 +51,7 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 | Category | Technologies | Purpose |
 | :--- | :--- | :--- |
 | **Core Framework** | Next.js `14.2.35`, React `18.2.0` | App Router, Server Components, and API Route backend endpoints |
-| **Database & ORM** | MongoDB `7.0`, Mongoose `8.0` | Document database with User schema definition and dynamic level progress mappings |
+| **Database** | Cloudflare D1 (Serverless SQLite) | Serverless relational SQL database storing user profiles and level progress |
 | **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route protection |
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
 | **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
@@ -72,9 +72,10 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 │   ├── api/                 # NextAuth, level scoring, user management, and seed endpoints
 │   ├── components/          # 30 individual LevelGame React components
 │   └── page.tsx             # Public landing portal
-├── lib/                     # Database connection, Mongoose models, and game curriculum data
+├── lib/                     # Database connection, D1 User model, and game curriculum data
 ├── legacy-java/             # Original Java Swing desktop application source
 ├── open-next.config.ts      # OpenNext Cloudflare adapter build configuration
+├── schema.sql               # Cloudflare D1 SQLite database schema and seed data
 ├── wrangler.jsonc           # Cloudflare Workers configuration with custom domain routing
 ├── screenshots/             # MacBook Pro M4 & iPhone 16 Pro showcase mockups
 └── README.md
@@ -87,13 +88,12 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 ### Prerequisites
 
 - **Node.js**: Version 18.17.0 or higher
-- **MongoDB**: Local MongoDB instance or MongoDB Atlas connection URI
+- **Wrangler**: Cloudflare CLI (executed via `npx wrangler`)
 
 ### Installation & Setup
 
-> **Environment Variables:** Configure `MONGODB_URI` in `.env.local` before launching the application. Copy `.env.example` as a template:
+> **Environment Variables:** Configure `NEXTAUTH_SECRET` and `NEXTAUTH_URL` in `.env.local` before launching the application. Copy `.env.example` as a template:
 > ```env
-> MONGODB_URI=your_mongodb_connection_string
 > NEXTAUTH_SECRET=your_nextauth_secret_key
 > NEXTAUTH_URL=http://localhost:3000
 > ```
@@ -109,14 +109,18 @@ npm install
 # 3. Configure environment variables
 cp .env.example .env.local
 
-# 4. Start local Next.js development server
+# 4. Initialize Cloudflare D1 database (remote or local)
+npx wrangler d1 execute school-games-db --remote --file=schema.sql
+npx wrangler d1 execute school-games-db --local --file=schema.sql
+
+# 5. Start local Next.js development server
 npm run dev
 
-# 5. Build for Cloudflare Workers (optional)
-npm run build:worker
+# 6. Build and deploy to Cloudflare Workers
+npm run deploy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your web browser. A seed endpoint is available at `/api/seed` to populate default accounts:
+Open [http://localhost:3000](http://localhost:3000) in your web browser. Default credentials are seeded as:
 
 | Role | Username | Password |
 | :--- | :--- | :--- |

@@ -30,9 +30,9 @@ export default async function SiswaDashboard() {
     const completedLevels: string[] = []
     if (user && user.levels) {
         try {
-            for (const key of user.levels.keys()) {
+            user.levels.forEach((_, key) => {
                 completedLevels.push(key)
-            }
+            })
         } catch (e) {
             // fallback
         }

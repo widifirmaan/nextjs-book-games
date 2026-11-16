@@ -8,6 +8,13 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "school-games-db",
+      "database_id": "c8a25700-f366-4411-865c-48d24cb59603"
+    }
+  ],
   "routes": [
     {
       "pattern": "book-games.widifirmaan.web.id",

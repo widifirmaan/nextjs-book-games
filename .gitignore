@@ -41,3 +41,5 @@ next-env.d.ts
 .env
 
 raw_screenshots/
+.open-next/
+.wrangler/

@@ -6,7 +6,7 @@ const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' })
 const fredoka = Fredoka({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--font-fredoka' })
 
 export const metadata: Metadata = {
-    title: 'NextJS - School Games',
+    title: 'Book Games',
     description: 'Interactive Learning Platform',
 }
 

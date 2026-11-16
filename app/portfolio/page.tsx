@@ -158,9 +158,9 @@ export default function PortfolioPage() {
                 <div className="header-ribbon-portfolio" style={{ marginBottom: '40px' }}>
                     2026 PRODUCT SHOWCASE
                 </div>
-                <h1>NEXTJS <span style={{ color: 'var(--panel-border)' }}>-</span> SCHOOL GAMES</h1>
+                <h1>BOOK <span style={{ color: 'var(--panel-border)' }}>GAMES</span></h1>
                 <div className="game-panel-portfolio" style={{ marginTop: '20px' }}>
-                    <p className="text-2xl font-black font-fredoka uppercase tracking-wider">PELAYARAN JIWA: Platform Pembelajaran Interaktif</p>
+                    <p className="text-2xl font-black font-fredoka uppercase tracking-wider">BOOK GAMES: Platform Pembelajaran Interaktif</p>
                 </div>
                 <div className="page-num">01</div>
             </section>
@@ -290,7 +290,7 @@ export default function PortfolioPage() {
             {/* PAGE 09: TECH STACK */}
             <section className="portfolio-page layout-hero">
                 <div className="header-ribbon-portfolio">Modern Technology</div>
-                <h1 className="!text-5xl mb-12">The Power Behind Pelayaran Jiwa</h1>
+                <h1 className="!text-5xl mb-12">The Power Behind Book Games</h1>
                 <div className="grid grid-cols-3 gap-8 w-full max-w-5xl">
                     <div className="game-panel-portfolio">
                         <h2 className="text-center">FRONTEND</h2>
@@ -329,7 +329,7 @@ export default function PortfolioPage() {
                 <div className="header-ribbon-portfolio !text-2xl">
                     WIDI FIRMAAN | LEAD DEVELOPER
                 </div>
-                <p className="text-white font-bold mt-8 opacity-60 italic">NextJS - School Games 2026</p>
+                <p className="text-white font-bold mt-8 opacity-60 italic">Book Games 2026</p>
                 <div className="page-num">10</div>
             </section>
         </main>

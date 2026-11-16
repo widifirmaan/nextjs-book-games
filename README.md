@@ -1,8 +1,8 @@
-# BukuMedia — School Games
+# Book Games
 
-> Interactive gamified educational platform and teacher gradebook built with Next.js 14, React 18, and Cloudflare D1.
+> Interactive gamified educational platform and teacher gradebook built with Next.js 14 and React 18.
 
-BukuMedia School Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
+Book Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
 
 [![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://book-games.widifirmaan.web.id)
 [![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://book-games.widifirmaan.web.id)
@@ -28,7 +28,7 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 
 | Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
-| **School Games Portal Home Desktop**<br>![School Games Portal Home Desktop](screenshots/School%20Games%20Portal%20Home%20Desktop.png) | **School Games Portal Home Mobile**<br>![School Games Portal Home Mobile](screenshots/School%20Games%20Portal%20Home%20Mobile.png) |
+| **Book Games Portal Home Desktop**<br>![Book Games Portal Home Desktop](screenshots/Book%20Games%20Portal%20Home%20Desktop.png) | **Book Games Portal Home Mobile**<br>![Book Games Portal Home Mobile](screenshots/Book%20Games%20Portal%20Home%20Mobile.png) |
 | **Unified Role Auth Portal Desktop**<br>![Unified Role Auth Portal Desktop](screenshots/Unified%20Role%20Auth%20Portal%20Desktop.png) | **Unified Role Auth Portal Mobile**<br>![Unified Role Auth Portal Mobile](screenshots/Unified%20Role%20Auth%20Portal%20Mobile.png) |
 | **Student Adventure Map Desktop**<br>![Student Adventure Map Desktop](screenshots/Student%20Adventure%20Map%20Desktop.png) | **Student Adventure Map Mobile**<br>![Student Adventure Map Mobile](screenshots/Student%20Adventure%20Map%20Mobile.png) |
 | **Teacher Gradebook Analytics Desktop**<br>![Teacher Gradebook Analytics Desktop](screenshots/Teacher%20Gradebook%20Analytics%20Desktop.png) | **Teacher Gradebook Analytics Mobile**<br>![Teacher Gradebook Analytics Mobile](screenshots/Teacher%20Gradebook%20Analytics%20Mobile.png) |

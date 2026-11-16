@@ -1,4 +1,4 @@
-// Cloudflare D1 User Model and Data Access Layer for BukuMedia School Games
+// Cloudflare D1 User Model and Data Access Layer for Book Games
 
 export interface UserRow {
     id: string;

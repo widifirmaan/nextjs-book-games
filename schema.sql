@@ -1,4 +1,4 @@
--- Cloudflare D1 Database Schema for BukuMedia School Games
+-- Cloudflare D1 Database Schema for Book Games
 
 CREATE TABLE IF NOT EXISTS users (
     id TEXT PRIMARY KEY,

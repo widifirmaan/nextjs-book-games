@@ -257,7 +257,7 @@ export default function GuruDashboard() {
         const wscols = Object.keys(dataToExport[0] || {}).map(() => ({ wch: 40 }));
         worksheet['!cols'] = wscols;
 
-        XLSX.writeFile(workbook, "Data_Siswa_Pelayaran_Jiwa.xlsx")
+        XLSX.writeFile(workbook, "Data_Siswa_Book_Games.xlsx")
     }
 
     // Generate Level Columns (1-30)

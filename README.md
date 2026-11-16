@@ -32,7 +32,6 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 | **Unified Role Auth Portal Desktop**<br>![Unified Role Auth Portal Desktop](screenshots/Unified%20Role%20Auth%20Portal%20Desktop.png) | **Unified Role Auth Portal Mobile**<br>![Unified Role Auth Portal Mobile](screenshots/Unified%20Role%20Auth%20Portal%20Mobile.png) |
 | **Student Adventure Map Desktop**<br>![Student Adventure Map Desktop](screenshots/Student%20Adventure%20Map%20Desktop.png) | **Student Adventure Map Mobile**<br>![Student Adventure Map Mobile](screenshots/Student%20Adventure%20Map%20Mobile.png) |
 | **Teacher Gradebook Analytics Desktop**<br>![Teacher Gradebook Analytics Desktop](screenshots/Teacher%20Gradebook%20Analytics%20Desktop.png) | **Teacher Gradebook Analytics Mobile**<br>![Teacher Gradebook Analytics Mobile](screenshots/Teacher%20Gradebook%20Analytics%20Mobile.png) |
-| **Interactive Project Showcase Desktop**<br>![Interactive Project Showcase Desktop](screenshots/Interactive%20Project%20Showcase%20Desktop.png) | **Interactive Project Showcase Mobile**<br>![Interactive Project Showcase Mobile](screenshots/Interactive%20Project%20Showcase%20Mobile.png) |
 
 ### Dimension 1: Self Acceptance (Levels 1 – 7)
 

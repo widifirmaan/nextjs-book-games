@@ -172,8 +172,8 @@ Configure the following variables in `.env.local`:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/widifirmaan/nextjs-school-games.git
-cd nextjs-school-games
+git clone https://github.com/widifirmaan/nextjs-book-games.git
+cd nextjs-book-games
 
 # 2. Install dependencies
 npm install

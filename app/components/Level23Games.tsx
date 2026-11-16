@@ -6,13 +6,13 @@ import Image from 'next/image'
 import GameAlert from './GameAlert'
 import { LEVEL_DATA } from '@/lib/gameData'
 
-interface Level29GamesProps {
+interface Level23GamesProps {
     levelId: string;
     onComplete: (data: any) => void;
     initialData?: Record<string, string>;
 }
 
-export default function Level23Games({ levelId, onComplete, initialData }: Level29GamesProps) {
+export default function Level23Games({ levelId, onComplete, initialData }: Level23GamesProps) {
     const router = useRouter()
 
     const levelConfig = LEVEL_DATA[levelId] || { questions: [] }
@@ -78,19 +78,18 @@ export default function Level23Games({ levelId, onComplete, initialData }: Level
                 <div className="relative h-[85vh] aspect-[1131/1600] animate-[popIn_0.5s_cubic-bezier(0.175,0.885,0.32,1.275)] mx-auto">
 
                     {/* Decoration: Minimal or None to let image text show */}
-                    {/* Decoration: Minimal or None to let image text show */}
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20 w-3/4">
                         <div className="bg-[#fbc02d] text-[#3e2723] py-2 text-center rounded-full border-b-[6px] border-[#f57f17] shadow-lg">
                             <span className="font-black uppercase tracking-widest text-lg md:text-xl whitespace-nowrap px-4">
-                                {levelConfig.title || "LEVEL 24"}
+                                {levelConfig.title || "LEVEL 23"}
                             </span>
                         </div>
                     </div>
 
                     <div className="w-full h-full bg-white rounded-[30px] shadow-2xl overflow-hidden border-[8px] border-[#fbc02d] relative">
                         <Image
-                            src="/images/level24-bg.jpeg"
-                            alt="Level 24 Background"
+                            src="/images/level23-bg.jpeg"
+                            alt="Level 23 Background"
                             fill
                             className="object-cover pointer-events-none"
                             priority

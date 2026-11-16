@@ -4,8 +4,8 @@
 
 BukuMedia School Games is an educational web application built with Next.js 14 (App Router) and MongoDB, migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
 
-[![Live Demo](https://img.shields.io/badge/Demo-games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://games.widifirmaan.web.id)
-[![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://games.widifirmaan.web.id)
+[![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://book-games.widifirmaan.web.id)
+[![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://book-games.widifirmaan.web.id)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB_Mongoose-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
@@ -16,7 +16,7 @@ BukuMedia School Games is an educational web application built with Next.js 14 (
 
 ## Live Production
 
-- **URL:** [https://games.widifirmaan.web.id](https://games.widifirmaan.web.id)
+- **URL:** [https://book-games.widifirmaan.web.id](https://book-games.widifirmaan.web.id)
 - **Deployment:** Cloudflare Workers with OpenNext (`@opennextjs/cloudflare`) & Edge Asset Routing
 - **Database:** MongoDB Atlas via Mongoose ORM
 

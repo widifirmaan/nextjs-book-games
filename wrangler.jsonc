@@ -10,7 +10,7 @@
   },
   "routes": [
     {
-      "pattern": "games.widifirmaan.web.id",
+      "pattern": "book-games.widifirmaan.web.id",
       "zone_name": "widifirmaan.web.id",
       "custom_domain": true
     }

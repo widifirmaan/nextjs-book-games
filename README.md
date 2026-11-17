@@ -2,7 +2,7 @@
 
 > Interactive gamified educational platform and teacher gradebook built with Next.js 14 and React 18.
 
-Book Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a legacy Java desktop client. Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
+Book Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a Spring Boot 3 & MongoDB web application (`legacy-java/`). Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
 
 [![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://book-games.widifirmaan.web.id)
 [![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://book-games.widifirmaan.web.id)
@@ -26,7 +26,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Core Platform & Portals
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Book Games Portal Home Desktop**<br>![Book Games Portal Home Desktop](screenshots/Book%20Games%20Portal%20Home%20Desktop.png) | **Book Games Portal Home Mobile**<br>![Book Games Portal Home Mobile](screenshots/Book%20Games%20Portal%20Home%20Mobile.png) |
 | **Unified Role Auth Portal Desktop**<br>![Unified Role Auth Portal Desktop](screenshots/Unified%20Role%20Auth%20Portal%20Desktop.png) | **Unified Role Auth Portal Mobile**<br>![Unified Role Auth Portal Mobile](screenshots/Unified%20Role%20Auth%20Portal%20Mobile.png) |
@@ -35,7 +35,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Dimension 1: Self Acceptance (Levels 1 – 7)
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Level 1: Word Search Arena Desktop**<br>![Level 1 Word Search Arena Desktop](screenshots/Level%201%20Word%20Search%20Arena%20Desktop.png) | **Level 1: Word Search Arena Mobile**<br>![Level 1 Word Search Arena Mobile](screenshots/Level%201%20Word%20Search%20Arena%20Mobile.png) |
 | **Level 2: Gambar Ekspresi Desktop**<br>![Level 2 Gambar Ekspresi Desktop](screenshots/Level%202%20Gambar%20Ekspresi%20Desktop.png) | **Level 2: Gambar Ekspresi Mobile**<br>![Level 2 Gambar Ekspresi Mobile](screenshots/Level%202%20Gambar%20Ekspresi%20Mobile.png) |
@@ -47,7 +47,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Dimension 2: Environmental (Levels 8 – 12)
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Level 8: Anxiety Elixir Desktop**<br>![Level 8 Anxiety Elixir Desktop](screenshots/Level%208%20Anxiety%20Elixir%20Desktop.png) | **Level 8: Anxiety Elixir Mobile**<br>![Level 8 Anxiety Elixir Mobile](screenshots/Level%208%20Anxiety%20Elixir%20Mobile.png) |
 | **Level 9: Refleksi Lingkaran Desktop**<br>![Level 9 Refleksi Lingkaran Desktop](screenshots/Level%209%20Refleksi%20Lingkaran%20Desktop.png) | **Level 9: Refleksi Lingkaran Mobile**<br>![Level 9 Refleksi Lingkaran Mobile](screenshots/Level%209%20Refleksi%20Lingkaran%20Mobile.png) |
@@ -57,7 +57,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Dimension 3: Personal Growth (Levels 13 – 24)
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Level 13: Pohon Harapan Desktop**<br>![Level 13 Pohon Harapan Desktop](screenshots/Level%2013%20Pohon%20Harapan%20Desktop.png) | **Level 13: Pohon Harapan Mobile**<br>![Level 13 Pohon Harapan Mobile](screenshots/Level%2013%20Pohon%20Harapan%20Mobile.png) |
 | **Level 14: Mimpi Terbesar Desktop**<br>![Level 14 Mimpi Terbesar Desktop](screenshots/Level%2014%20Mimpi%20Terbesar%20Desktop.png) | **Level 14: Mimpi Terbesar Mobile**<br>![Level 14 Mimpi Terbesar Mobile](screenshots/Level%2014%20Mimpi%20Terbesar%20Mobile.png) |
@@ -74,7 +74,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Dimension 4: Purpose in Life (Levels 25 – 29)
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Level 25: Eksplorasi Diri Desktop**<br>![Level 25 Eksplorasi Diri Desktop](screenshots/Level%2025%20Eksplorasi%20Diri%20Desktop.png) | **Level 25: Eksplorasi Diri Mobile**<br>![Level 25 Eksplorasi Diri Mobile](screenshots/Level%2025%20Eksplorasi%20Diri%20Mobile.png) |
 | **Level 26: Lingkar Waktu Desktop**<br>![Level 26 Lingkar Waktu Desktop](screenshots/Level%2026%20Lingkar%20Waktu%20Desktop.png) | **Level 26: Lingkar Waktu Mobile**<br>![Level 26 Lingkar Waktu Mobile](screenshots/Level%2026%20Lingkar%20Waktu%20Mobile.png) |
@@ -84,7 +84,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ### Dimension 5: Positive Relations (Level 30)
 
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| Desktop | Mobile |
 | :---: | :---: |
 | **Level 30: Scoop of Hope Desktop**<br>![Level 30 Scoop of Hope Desktop](screenshots/Level%2030%20Scoop%20of%20Hope%20Desktop.png) | **Level 30: Scoop of Hope Mobile**<br>![Level 30 Scoop of Hope Mobile](screenshots/Level%2030%20Scoop%20of%20Hope%20Mobile.png) |
 
@@ -105,7 +105,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 - **HTML5 Canvas Sketching Engine (`Level2Drawing.tsx`, `Level10Drawing.tsx`)**: Responsive drawing canvas supporting freehand pen strokes, color selection, stroke thickness adjustments, undo history, and direct data-URL base64 export.
 - **Interactive Word Search Arena (`Level1WordSearch.tsx`)**: 10x10 matrix word finder with real-time drag-to-select letter highlighting, horizontal/vertical word detection, and audio feedback.
 - **Curriculum Portfolio Showcase (`app/portfolio/page.tsx`)**: Printable A4-landscape digital curriculum overview displaying comprehensive activity modules and visual documentation.
-- **Legacy Desktop Modernization (`legacy-java/`)**: Complete web reimplementation preserving the curriculum, game logic, and asset structure of the original Java Swing desktop client.
+- **Spring Boot to Edge Migration (`legacy-java/`)**: Architectural modernization preserving the curriculum, game logic, and asset structure from the original Spring Boot 3 & MongoDB backend into Next.js App Router and Cloudflare D1.
 
 ---
 
@@ -118,6 +118,38 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 | **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route protection |
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
 | **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
+
+---
+
+## Database Architecture
+
+Book Games utilizes Cloudflare D1 (SQLite) to persist student gameplay, timestamps, daily submissions, and teacher records. The schema (`schema.sql`) organizes data with JSON serialization:
+
+```sql
+CREATE TABLE users (
+    id TEXT PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role TEXT NOT NULL CHECK(role IN ('GURU', 'SISWA')),
+    fullName TEXT,
+    email TEXT,
+    kelas TEXT,
+    schoolName TEXT,
+    photoUrl TEXT,
+    level INTEGER DEFAULT 1,
+    levels TEXT DEFAULT '{}',               -- Serialized Level completion map
+    indukStartTimes TEXT DEFAULT '{}',      -- Session start timestamps
+    indukEndTimes TEXT DEFAULT '{}',        -- Session finish timestamps
+    dailySubmissions TEXT DEFAULT '{}',     -- Daily progress records
+    awards TEXT DEFAULT '[]',               -- Earned achievement badge IDs
+    newAwardsToNotify TEXT DEFAULT '[]',    -- Pending notification queue
+    createdAt TEXT DEFAULT (datetime('now')),
+    updatedAt TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX idx_users_role ON users(role);
+CREATE INDEX idx_users_username ON users(username);
+```
 
 ---
 
@@ -136,11 +168,11 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 │   ├── components/          # 30 individual LevelGame React components
 │   └── page.tsx             # Public landing portal
 ├── lib/                     # Database connection, D1 User model, and game curriculum data
-├── legacy-java/             # Original Java Swing desktop application source
+├── legacy-java/             # Original Spring Boot 3 & MongoDB web application source
 ├── open-next.config.ts      # OpenNext Cloudflare adapter build configuration
 ├── schema.sql               # Cloudflare D1 SQLite database schema and seed data
 ├── wrangler.jsonc           # Cloudflare Workers configuration with custom domain routing
-├── screenshots/             # MacBook Pro M4 & iPhone 16 Pro showcase mockups
+├── screenshots/             # Showcase mockups
 └── README.md
 ```
 

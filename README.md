@@ -1,8 +1,6 @@
 # Book Games
 
-> Interactive gamified educational platform and teacher gradebook built with Next.js 14 and React 18.
-
-Book Games is an educational web application built with Next.js 14 (App Router) and SQLite, migrated from a legacy Spring Boot 3 & MongoDB web application (`legacy-java/`). It features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
+> Platform pembelajaran interaktif berbasis gamifikasi dan buku nilai guru dengan 30 level mini-game refleksi psikologis anak.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
@@ -10,110 +8,68 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 [![NextAuth.js](https://img.shields.io/badge/Auth-NextAuth.js_v4-blueviolet?style=flat-square)](https://next-auth.js.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square)](https://book-games.widifirmaan.web.id)
 
 ---
 
-## Showcase
+## Live URL
 
-### Core Platform & Portals
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Book Games Portal Home Desktop**<br>![Book Games Portal Home Desktop](screenshots/Book%20Games%20Portal%20Home%20Desktop.png) | **Book Games Portal Home Mobile**<br>![Book Games Portal Home Mobile](screenshots/Book%20Games%20Portal%20Home%20Mobile.png) |
-| **Unified Role Auth Portal Desktop**<br>![Unified Role Auth Portal Desktop](screenshots/Unified%20Role%20Auth%20Portal%20Desktop.png) | **Unified Role Auth Portal Mobile**<br>![Unified Role Auth Portal Mobile](screenshots/Unified%20Role%20Auth%20Portal%20Mobile.png) |
-| **Student Adventure Map Desktop**<br>![Student Adventure Map Desktop](screenshots/Student%20Adventure%20Map%20Desktop.png) | **Student Adventure Map Mobile**<br>![Student Adventure Map Mobile](screenshots/Student%20Adventure%20Map%20Mobile.png) |
-| **Teacher Gradebook Analytics Desktop**<br>![Teacher Gradebook Analytics Desktop](screenshots/Teacher%20Gradebook%20Analytics%20Desktop.png) | **Teacher Gradebook Analytics Mobile**<br>![Teacher Gradebook Analytics Mobile](screenshots/Teacher%20Gradebook%20Analytics%20Mobile.png) |
-
-### Dimension 1: Self Acceptance (Levels 1 – 7)
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Level 1: Word Search Arena Desktop**<br>![Level 1 Word Search Arena Desktop](screenshots/Level%201%20Word%20Search%20Arena%20Desktop.png) | **Level 1: Word Search Arena Mobile**<br>![Level 1 Word Search Arena Mobile](screenshots/Level%201%20Word%20Search%20Arena%20Mobile.png) |
-| **Level 2: Gambar Ekspresi Desktop**<br>![Level 2 Gambar Ekspresi Desktop](screenshots/Level%202%20Gambar%20Ekspresi%20Desktop.png) | **Level 2: Gambar Ekspresi Mobile**<br>![Level 2 Gambar Ekspresi Mobile](screenshots/Level%202%20Gambar%20Ekspresi%20Mobile.png) |
-| **Level 3: Balon Harapan Desktop**<br>![Level 3 Balon Harapan Desktop](screenshots/Level%203%20Balon%20Harapan%20Desktop.png) | **Level 3: Balon Harapan Mobile**<br>![Level 3 Balon Harapan Mobile](screenshots/Level%203%20Balon%20Harapan%20Mobile.png) |
-| **Level 4: Refleksi Diri Desktop**<br>![Level 4 Refleksi Diri Desktop](screenshots/Level%204%20Refleksi%20Diri%20Desktop.png) | **Level 4: Refleksi Diri Mobile**<br>![Level 4 Refleksi Diri Mobile](screenshots/Level%204%20Refleksi%20Diri%20Mobile.png) |
-| **Level 5: Rings Desktop**<br>![Level 5 Rings Desktop](screenshots/Level%205%20Rings%20Desktop.png) | **Level 5: Rings Mobile**<br>![Level 5 Rings Mobile](screenshots/Level%205%20Rings%20Mobile.png) |
-| **Level 6: Refleksi Cermin Desktop**<br>![Level 6 Refleksi Cermin Desktop](screenshots/Level%206%20Refleksi%20Cermin%20Desktop.png) | **Level 6: Refleksi Cermin Mobile**<br>![Level 6 Refleksi Cermin Mobile](screenshots/Level%206%20Refleksi%20Cermin%20Mobile.png) |
-| **Level 7: Refleksi Kotak Desktop**<br>![Level 7 Refleksi Kotak Desktop](screenshots/Level%207%20Refleksi%20Kotak%20Desktop.png) | **Level 7: Refleksi Kotak Mobile**<br>![Level 7 Refleksi Kotak Mobile](screenshots/Level%207%20Refleksi%20Kotak%20Mobile.png) |
-
-### Dimension 2: Environmental (Levels 8 – 12)
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Level 8: Anxiety Elixir Desktop**<br>![Level 8 Anxiety Elixir Desktop](screenshots/Level%208%20Anxiety%20Elixir%20Desktop.png) | **Level 8: Anxiety Elixir Mobile**<br>![Level 8 Anxiety Elixir Mobile](screenshots/Level%208%20Anxiety%20Elixir%20Mobile.png) |
-| **Level 9: Refleksi Lingkaran Desktop**<br>![Level 9 Refleksi Lingkaran Desktop](screenshots/Level%209%20Refleksi%20Lingkaran%20Desktop.png) | **Level 9: Refleksi Lingkaran Mobile**<br>![Level 9 Refleksi Lingkaran Mobile](screenshots/Level%209%20Refleksi%20Lingkaran%20Mobile.png) |
-| **Level 10: Ekspresi Bebas Canvas Desktop**<br>![Level 10 Ekspresi Bebas Canvas Desktop](screenshots/Level%2010%20Ekspresi%20Bebas%20Canvas%20Desktop.png) | **Level 10: Ekspresi Bebas Canvas Mobile**<br>![Level 10 Ekspresi Bebas Canvas Mobile](screenshots/Level%2010%20Ekspresi%20Bebas%20Canvas%20Mobile.png) |
-| **Level 11: Soundtrack Musik Desktop**<br>![Level 11 Soundtrack Musik Desktop](screenshots/Level%2011%20Soundtrack%20Musik%20Desktop.png) | **Level 11: Soundtrack Musik Mobile**<br>![Level 11 Soundtrack Musik Mobile](screenshots/Level%2011%20Soundtrack%20Musik%20Mobile.png) |
-| **Level 12: Are You Okay Desktop**<br>![Level 12 Are You Okay Desktop](screenshots/Level%2012%20Are%20You%20Okay%20Desktop.png) | **Level 12: Are You Okay Mobile**<br>![Level 12 Are You Okay Mobile](screenshots/Level%2012%20Are%20You%20Okay%20Mobile.png) |
-
-### Dimension 3: Personal Growth (Levels 13 – 24)
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Level 13: Pohon Harapan Desktop**<br>![Level 13 Pohon Harapan Desktop](screenshots/Level%2013%20Pohon%20Harapan%20Desktop.png) | **Level 13: Pohon Harapan Mobile**<br>![Level 13 Pohon Harapan Mobile](screenshots/Level%2013%20Pohon%20Harapan%20Mobile.png) |
-| **Level 14: Mimpi Terbesar Desktop**<br>![Level 14 Mimpi Terbesar Desktop](screenshots/Level%2014%20Mimpi%20Terbesar%20Desktop.png) | **Level 14: Mimpi Terbesar Mobile**<br>![Level 14 Mimpi Terbesar Mobile](screenshots/Level%2014%20Mimpi%20Terbesar%20Mobile.png) |
-| **Level 15: Refleksi Diri Desktop**<br>![Level 15 Refleksi Diri Desktop](screenshots/Level%2015%20Refleksi%20Diri%20Desktop.png) | **Level 15: Refleksi Diri Mobile**<br>![Level 15 Refleksi Diri Mobile](screenshots/Level%2015%20Refleksi%20Diri%20Mobile.png) |
-| **Level 16: Imajinasi Awan Desktop**<br>![Level 16 Imajinasi Awan Desktop](screenshots/Level%2016%20Imajinasi%20Awan%20Desktop.png) | **Level 16: Imajinasi Awan Mobile**<br>![Level 16 Imajinasi Awan Mobile](screenshots/Level%2016%20Imajinasi%20Awan%20Mobile.png) |
-| **Level 17: Rencana Sticky Notes Desktop**<br>![Level 17 Rencana Sticky Notes Desktop](screenshots/Level%2017%20Rencana%20Sticky%20Notes%20Desktop.png) | **Level 17: Rencana Sticky Notes Mobile**<br>![Level 17 Rencana Sticky Notes Mobile](screenshots/Level%2017%20Rencana%20Sticky%20Notes%20Mobile.png) |
-| **Level 18: Tangga Perubahan 1 Desktop**<br>![Level 18 Tangga Perubahan 1 Desktop](screenshots/Level%2018%20Tangga%20Perubahan%201%20Desktop.png) | **Level 18: Tangga Perubahan 1 Mobile**<br>![Level 18 Tangga Perubahan 1 Mobile](screenshots/Level%2018%20Tangga%20Perubahan%201%20Mobile.png) |
-| **Level 19: Tangga Perubahan 2 Desktop**<br>![Level 19 Tangga Perubahan 2 Desktop](screenshots/Level%2019%20Tangga%20Perubahan%202%20Desktop.png) | **Level 19: Tangga Perubahan 2 Mobile**<br>![Level 19 Tangga Perubahan 2 Mobile](screenshots/Level%2019%20Tangga%20Perubahan%202%20Mobile.png) |
-| **Level 20: Tangga Perubahan 3 Desktop**<br>![Level 20 Tangga Perubahan 3 Desktop](screenshots/Level%2020%20Tangga%20Perubahan%203%20Desktop.png) | **Level 20: Tangga Perubahan 3 Mobile**<br>![Level 20 Tangga Perubahan 3 Mobile](screenshots/Level%2020%20Tangga%20Perubahan%203%20Mobile.png) |
-| **Level 21: Tangga Perubahan 4 Desktop**<br>![Level 21 Tangga Perubahan 4 Desktop](screenshots/Level%2021%20Tangga%20Perubahan%204%20Desktop.png) | **Level 21: Tangga Perubahan 4 Mobile**<br>![Level 21 Tangga Perubahan 4 Mobile](screenshots/Level%2021%20Tangga%20Perubahan%204%20Mobile.png) |
-| **Level 22: Tangga Perubahan 5 Desktop**<br>![Level 22 Tangga Perubahan 5 Desktop](screenshots/Level%2022%20Tangga%20Perubahan%205%20Desktop.png) | **Level 22: Tangga Perubahan 5 Mobile**<br>![Level 22 Tangga Perubahan 5 Mobile](screenshots/Level%2022%20Tangga%20Perubahan%205%20Mobile.png) |
-| **Level 23: Tangga Perubahan 6 Desktop**<br>![Level 23 Tangga Perubahan 6 Desktop](screenshots/Level%2023%20Tangga%20Perubahan%206%20Desktop.png) | **Level 23: Tangga Perubahan 6 Mobile**<br>![Level 23 Tangga Perubahan 6 Mobile](screenshots/Level%2023%20Tangga%20Perubahan%206%20Mobile.png) |
-| **Level 24: Tangga Perubahan 7 Desktop**<br>![Level 24 Tangga Perubahan 7 Desktop](screenshots/Level%2024%20Tangga%20Perubahan%207%20Desktop.png) | **Level 24: Tangga Perubahan 7 Mobile**<br>![Level 24 Tangga Perubahan 7 Mobile](screenshots/Level%2024%20Tangga%20Perubahan%207%20Mobile.png) |
-
-### Dimension 4: Purpose in Life (Levels 25 – 29)
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Level 25: Eksplorasi Diri Desktop**<br>![Level 25 Eksplorasi Diri Desktop](screenshots/Level%2025%20Eksplorasi%20Diri%20Desktop.png) | **Level 25: Eksplorasi Diri Mobile**<br>![Level 25 Eksplorasi Diri Mobile](screenshots/Level%2025%20Eksplorasi%20Diri%20Mobile.png) |
-| **Level 26: Lingkar Waktu Desktop**<br>![Level 26 Lingkar Waktu Desktop](screenshots/Level%2026%20Lingkar%20Waktu%20Desktop.png) | **Level 26: Lingkar Waktu Mobile**<br>![Level 26 Lingkar Waktu Mobile](screenshots/Level%2026%20Lingkar%20Waktu%20Mobile.png) |
-| **Level 27: Peta Bersyukur Desktop**<br>![Level 27 Peta Bersyukur Desktop](screenshots/Level%2027%20Peta%20Bersyukur%20Desktop.png) | **Level 27: Peta Bersyukur Mobile**<br>![Level 27 Peta Bersyukur Mobile](screenshots/Level%2027%20Peta%20Bersyukur%20Mobile.png) |
-| **Level 28: Kompas Tujuan Desktop**<br>![Level 28 Kompas Tujuan Desktop](screenshots/Level%2028%20Kompas%20Tujuan%20Desktop.png) | **Level 28: Kompas Tujuan Mobile**<br>![Level 28 Kompas Tujuan Mobile](screenshots/Level%2028%20Kompas%20Tujuan%20Mobile.png) |
-| **Level 29: Surat Masa Depan Desktop**<br>![Level 29 Surat Masa Depan Desktop](screenshots/Level%2029%20Surat%20Masa%20Depan%20Desktop.png) | **Level 29: Surat Masa Depan Mobile**<br>![Level 29 Surat Masa Depan Mobile](screenshots/Level%2029%20Surat%20Masa%20Depan%20Mobile.png) |
-
-### Dimension 5: Positive Relations (Level 30)
-
-| Desktop | Mobile |
-| :---: | :---: |
-| **Level 30: Scoop of Hope Desktop**<br>![Level 30 Scoop of Hope Desktop](screenshots/Level%2030%20Scoop%20of%20Hope%20Desktop.png) | **Level 30: Scoop of Hope Mobile**<br>![Level 30 Scoop of Hope Mobile](screenshots/Level%2030%20Scoop%20of%20Hope%20Mobile.png) |
+- **Production URL**: [https://book-games.widifirmaan.web.id](https://book-games.widifirmaan.web.id)
 
 ---
 
-## Features
+## Screenshot
 
-- **30 Gamified Psychological Activities (`app/level/[id]/page.tsx`)**: Educational reflection exercises divided into 5 psychological well-being (PWB) dimensions:
-  - **Self Acceptance (Levels 1–7)**: Word search grid (`Level1WordSearch.tsx`), multi-expression facial sketching (`Level2Drawing.tsx`), hope balloons (`Level3Games.tsx`), mirror reflection, and introspection boxes.
-  - **Environmental Mastery (Levels 8–12)**: Anxiety elixir potion mixing (`Level8Games.tsx`), concentric circle reflection, freehand canvas drawing (`Level10Drawing.tsx`), calming soundtrack audio session, and emotional splash checkpoint.
-  - **Personal Growth (Levels 13–24)**: Tree of hope (`Level13Games.tsx`), biggest dream declaration, cloud imagination, sticky notes action planner, and 7 sequential stages of change stairways (`Level18Games.tsx` – `Level24Games.tsx`).
-  - **Purpose in Life (Levels 25–29)**: Self-exploration questionnaire, three-era time wheel (Dahulu, Sekarang, Esok), gratitude treasure map, goal direction compass, and letter to future self.
-  - **Positive Relations (Level 30)**: Multi-layered ice cream scoop of hope (`Level30IceCream.tsx`) capturing wishes for loved ones and social circles.
-- **Sequential Adventure Progression Map (`app/dashboard/siswa/page.tsx`)**: Student dashboard displaying dynamic level completion counts, category locks/unlocks based on completed prerequisite levels, and achievement badges (`CHAPTER_1_COMPLETE` through `CHAPTER_5_COMPLETE`, and `CONSISTENT_WORKER` 7-day streak awards).
-- **Teacher Gradebook & Analytics (`app/dashboard/guru/page.tsx`)**: Central educator management portal with school and class filtering, student progress tables across all 30 levels with completion status checkmarks, detailed submission response inspection, and 1-click Excel spreadsheet export via SheetJS (`.xlsx`).
-- **Unified Role-Based Authentication (`app/login/page.tsx` & `lib/authOptions.ts`)**: Credentials authentication powered by NextAuth.js separating Teacher (`GURU`) administrative rights from Student (`SISWA`) gameplay sessions.
-- **Relational SQLite Storage (`schema.sql`)**: Relational database schema executing SQL queries with serialized level response maps, submission timestamps, and award notification queues.
-- **HTML5 Canvas Sketching Engine (`Level2Drawing.tsx`, `Level10Drawing.tsx`)**: Responsive drawing canvas supporting freehand pen strokes, color selection, stroke thickness adjustments, undo history, and direct data-URL base64 export.
-- **Interactive Word Search Arena (`Level1WordSearch.tsx`)**: 10x10 matrix word finder with real-time drag-to-select letter highlighting, horizontal/vertical word detection, and audio feedback.
-- **Curriculum Portfolio Showcase (`app/portfolio/page.tsx`)**: Printable digital curriculum overview displaying comprehensive activity modules and visual documentation.
+| Desktop | Mobile |
+| :---: | :---: |
+| **Portal Beranda Utama**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Portal Beranda Utama**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
+| **Autentikasi Login Peran Terpadu**<br>![Login](screenshots/Login%20Desktop.png) | **Autentikasi Login Peran Terpadu**<br>![Login](screenshots/Login%20Mobile.png) |
+| **Peta Petualangan Siswa (Adventure Map)**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Desktop.png) | **Peta Petualangan Siswa (Adventure Map)**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Mobile.png) |
+| **Buku Nilai Guru & Rekapitulasi Kelas**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Buku Nilai Guru & Rekapitulasi Kelas**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
+| **Level 1: Matriks Word Search**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Desktop.png) | **Level 1: Matriks Word Search**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Mobile.png) |
+| **Level 2: Sketsa Wajah Ekspresi**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Desktop.png) | **Level 2: Sketsa Wajah Ekspresi**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Mobile.png) |
+| **Level 3: Balon Harapan Interaktif**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Desktop.png) | **Level 3: Balon Harapan Interaktif**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Mobile.png) |
+| **Level 8: Ramuan Anxiety Elixir**<br>![Level 8 Anxiety Elixir](screenshots/Level%208%20Anxiety%20Elixir%20Desktop.png) | **Level 8: Ramuan Anxiety Elixir**<br>![Level 8 Anxiety Elixir](screenshots/Level%208%20Anxiety%20Elixir%20Mobile.png) |
+| **Level 10: Kanvas Gambar Ekspresi Bebas**<br>![Level 10 Canvas](screenshots/Level%2010%20Canvas%20Desktop.png) | **Level 10: Kanvas Gambar Ekspresi Bebas**<br>![Level 10 Canvas](screenshots/Level%2010%20Canvas%20Mobile.png) |
+| **Level 13: Daun Pohon Harapan**<br>![Level 13 Pohon Harapan](screenshots/Level%2013%20Pohon%20Harapan%20Desktop.png) | **Level 13: Daun Pohon Harapan**<br>![Level 13 Pohon Harapan](screenshots/Level%2013%20Pohon%20Harapan%20Mobile.png) |
+| **Level 25: Eksplorasi Minat & Bakat Diri**<br>![Level 25 Eksplorasi Diri](screenshots/Level%2025%20Eksplorasi%20Diri%20Desktop.png) | **Level 25: Eksplorasi Minat & Bakat Diri**<br>![Level 25 Eksplorasi Diri](screenshots/Level%2025%20Eksplorasi%20Diri%20Mobile.png) |
+| **Level 30: Es Krim Scoop of Hope**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Desktop.png) | **Level 30: Es Krim Scoop of Hope**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Mobile.png) |
+| **Portofolio Ringkasan Kurikulum**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Desktop.png) | **Portofolio Ringkasan Kurikulum**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Mobile.png) |
+
+---
+
+## Fitur
+
+- **30 Level Aktivitas Refleksi Gamifikasi (`app/level/[id]/page.tsx`)**: Aktivitas pembelajaran yang terbagi ke dalam 5 dimensi *Psychological Well-Being* (PWB):
+  - **Dimensi 1: Self Acceptance (Level 1–7)**: Pencarian kata karakter diri (`Level1WordSearch.tsx`), kanvas gambar ekspresi emosi (`Level2Drawing.tsx`), pelepasan balon harapan (`Level3Games.tsx`), cermin refleksi, dan kotak penerimaan diri.
+  - **Dimensi 2: Environmental Mastery (Level 8–12)**: Peracikan ramuan penenang kecemasan (`Level8Games.tsx`), lingkaran pengaruh, kanvas gambar bebas (`Level10Drawing.tsx`), pemutar musik relaksasi, dan penilaian kondisi emosi harian.
+  - **Dimensi 3: Personal Growth (Level 13–24)**: Penanaman daun harapan pada pohon cita-cita (`Level13Games.tsx`), penulisan impian terbesar, imajinasi awan, catatan tempel resolusi, dan 7 tangga tahapan perubahan bertahap (`Level18Games.tsx` s/d `Level24Games.tsx`).
+  - **Dimensi 4: Purpose in Life (Level 25–29)**: Kuisioner eksplorasi potensi diri, roda waktu 3 era (Dahulu, Sekarang, Esok), peta harta karun rasa syukur, kompas penentu arah tujuan hidup, dan surat untuk diri di masa depan.
+  - **Dimensi 5: Positive Relations (Level 30)**: Penyusunan sendok es krim harapan multi-rasa (`Level30IceCream.tsx`) yang mewakili doa untuk orang tua, sahabat, dan lingkungan sekitar.
+- **Peta Petualangan Siswa (`app/dashboard/siswa/page.tsx`)**: Dashboard visual bertahap dengan penanda level aktif, penggembokan level berikutnya sebelum level prasyarat terselesaikan, serta pembagian lencana pencapaian (*achievement badges*).
+- **Buku Nilai Guru & Ekspor Excel (`app/dashboard/guru/page.tsx`)**: Portal pemantauan bagi pendidik dengan filter berdasarkan sekolah dan rombongan belajar (kelas), matriks centang penyelesaian tugas siswa pada 30 level, inspeksi jawaban refleksi, dan tombol ekspor langsung ke spreadsheet Excel (`.xlsx`) via SheetJS.
+- **Autentikasi Multi-Peran Terpadu (`app/login/page.tsx`)**: Manajemen sesi login berbasis NextAuth.js yang memisahkan akses Guru (`GURU`) dan Siswa (`SISWA`).
+- **Basis Data Relasional SQLite (`schema.sql`)**: Penyimpanan progres siswa, status submission jawaban, durasi pengerjaan, dan riwayat perolehan badge menggunakan format JSON terstruktur di dalam tabel `users`.
+- **Kanvas Gambar HTML5 Interaktif**: Fitur melukis bebas dengan pengaturan palet warna, ukuran kuas, tombol undo, dan ekspor data URL base64 ke penyimpanan database.
 
 ---
 
 ## Tech Stack
 
-| Category | Technologies | Purpose |
+| Kategori | Teknologi | Deskripsi / Peran |
 | :--- | :--- | :--- |
-| **Core Framework** | Next.js `14.2.35`, React `18.2.0` | App Router, Server Components, and API Route backend endpoints |
-| **Database** | SQLite 3 | Relational database storing user profiles and level progress records |
-| **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route protection |
-| **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
-| **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
+| **Framework Utama** | Next.js `14.2.35` (App Router), React `18.2.0` | Server Components, routing modular, dan API Routes backend |
+| **Basis Data** | SQLite 3 | Relasional database lokal untuk akun, status level, dan jawaban refleksi |
+| **Autentikasi** | NextAuth.js `4.24.5` | Manajemen sesi login berbasis kredensial role GURU / SISWA |
+| **Ekspor Data** | SheetJS (xlsx) `0.18.5` | Kompilasi data tabel buku nilai ke file spreadsheet binary `.xlsx` |
+| **Styling** | Tailwind CSS `3.3.0` | Desain antarmuka ceria ramah anak dengan palet warna cerah |
+| **Type System** | TypeScript `5.0` | Pengetikan statis komponen level dan payload response |
 
 ---
 
 ## Database Architecture
 
-Book Games utilizes SQLite to persist student gameplay, timestamps, daily submissions, and teacher records. The schema (`schema.sql`) organizes data with JSON serialization:
+Book Games menyimpan profil, progres permainan, dan rekap nilai dalam tabel relasional SQLite (`schema.sql`):
 
 ```sql
 CREATE TABLE users (
@@ -127,12 +83,12 @@ CREATE TABLE users (
     schoolName TEXT,
     photoUrl TEXT,
     level INTEGER DEFAULT 1,
-    levels TEXT DEFAULT '{}',               -- Serialized Level completion map
-    indukStartTimes TEXT DEFAULT '{}',      -- Session start timestamps
-    indukEndTimes TEXT DEFAULT '{}',        -- Session finish timestamps
-    dailySubmissions TEXT DEFAULT '{}',     -- Daily progress records
-    awards TEXT DEFAULT '[]',               -- Earned achievement badge IDs
-    newAwardsToNotify TEXT DEFAULT '[]',    -- Pending notification queue
+    levels TEXT DEFAULT '{}',               -- JSON peta penyelesaian level
+    indukStartTimes TEXT DEFAULT '{}',      -- Waktu mulai sesi
+    indukEndTimes TEXT DEFAULT '{}',        -- Waktu selesai sesi
+    dailySubmissions TEXT DEFAULT '{}',     -- Catatan tugas harian
+    awards TEXT DEFAULT '[]',               -- Daftar ID lencana pencapaian
+    newAwardsToNotify TEXT DEFAULT '[]',    -- Antrean notifikasi badge baru
     createdAt TEXT DEFAULT (datetime('now')),
     updatedAt TEXT DEFAULT (datetime('now'))
 );
@@ -143,101 +99,69 @@ CREATE INDEX idx_users_username ON users(username);
 
 ---
 
-## Project Structure
+## Panduan Setup & Menjalankan Lokal
 
-```bash
-/
-├── app/
-│   ├── level/[id]/          # Dynamic educational game routes (Levels 1-30)
-│   ├── dashboard/
-│   │   ├── guru/            # Teacher analytics and student score tracking
-│   │   └── siswa/           # Student level progression adventure map
-│   ├── login/               # Unified role authentication portal
-│   ├── portfolio/           # Interactive showcase and curriculum overview
-│   ├── api/                 # NextAuth, level scoring, user management, and seed endpoints
-│   ├── components/          # 30 individual LevelGame React components
-│   └── page.tsx             # Public landing portal
-├── lib/                     # Database connection, User model, and game curriculum data
-├── legacy-java/             # Original Spring Boot 3 & MongoDB web application source
-├── schema.sql               # SQLite database schema and pre-seeded demo records
-├── screenshots/             # Showcase mockups
-├── package.json
-└── README.md
-```
+### 1. Prasyarat Sistem
 
----
-
-## Local Setup & Deployment
-
-### 1. Prerequisites
-
-- **Node.js**: Version `18.17.0` or higher (`20.x` recommended)
-- **npm** or **pnpm**
+- **Node.js**: Versi `18.17.0` atau lebih tinggi (`20.x` direkomendasikan)
+- **npm** atau **pnpm**
 - **SQLite 3**: Native CLI (`sqlite3`)
 
-### 2. Environment Variables Setup
+### 2. Environment Variables
 
-Create a `.env.local` file in the root directory by copying the provided `.env.example`:
-
-```bash
-cp .env.example .env.local
-```
-
-Configure the following variables in `.env.local`:
+Buat file `.env.local` pada direktori root proyek:
 
 ```env
-NEXTAUTH_SECRET=your_super_secret_key_here
+NEXTAUTH_SECRET=super_secret_local_dev_key_12345
 NEXTAUTH_URL=http://localhost:3000
 ```
 
-### 3. Installation & Setup Database Lokal
-
-Inisialisasi skema tabel dan data awal (seeder) ke database SQLite lokal:
+### 3. Instalasi Dependensi
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/widifirmaan/nextjs-book-games.git
 cd nextjs-book-games
 
-# Install dependencies
+# Install package
 npm install
+```
 
-# Setup SQLite database & demo seeder
+### 4. Setup Database & Seeder Lokal
+
+Inisialisasi tabel dan akun demo seeder ke database SQLite lokal:
+
+```bash
+# Inisialisasi skema dan data awal
 sqlite3 local.db < schema.sql
 
 # Atau via npm script
 npm run db:setup
 ```
 
-#### Demo Seeder Accounts:
-Data awal akun demo telah disertakan langsung di dalam `schema.sql`:
+#### Akun Pengguna Bawaan (Seeder):
+- **Akun Guru**: Username `guru` / Password `password` (Akses buku nilai, tabel rekap, dan unduh Excel)
+- **Akun Siswa**: Username `siswa` / Password `password` (Akses peta petualangan 30 level mini-game)
 
-| Role | Username | Password | Default Route | Accessible Features |
-| :--- | :--- | :--- | :--- | :--- |
-| **Guru (Teacher)** | `guru` | `password` | `/dashboard/guru` | Rekap nilai siswa, filter kelas/sekolah, export Excel `.xlsx` |
-| **Siswa (Student)** | `siswa` | `password` | `/dashboard/siswa` | Peta petualangan 30 level mini-game, badges, progress tracker |
-
-### 4. Menjalankan Server Lokal
+### 5. Menjalankan Server Lokal
 
 ```bash
-# Jalankan server frontend Next.js
+# Jalankan server Next.js lokal
 npm run dev
 ```
 
 Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-### 5. Panduan Uji Manual (Testing Checklist)
+### 6. Panduan Uji Manual (Testing Checklist)
 
-Lakukan verifikasi manual berikut di browser:
-
-| No | Fitur yang Diuji | Langkah Pengujian | Hasil yang Diharapkan |
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan |
 | :---: | :--- | :--- | :--- |
-| 1 | **Login Portal Guru** | Buka `/login`, login dengan `guru` / `password` | Masuk ke dashboard guru (`/dashboard/guru`) |
-| 2 | **Gradebook & Export** | Buka tabel siswa di `/dashboard/guru`, klik tombol Export | File rekapitulasi nilai `.xlsx` terunduh dengan benar via SheetJS |
+| 1 | **Login Guru** | Buka `/login`, login dengan akun `guru` / `password` | Masuk ke dashboard guru (`/dashboard/guru`) |
+| 2 | **Unduh Excel** | Di dashboard guru, klik tombol *Export Excel* | File spreadsheet rekap nilai `.xlsx` berhasil diunduh via SheetJS |
 | 3 | **Login Siswa** | Logout, login dengan `siswa` / `password` | Masuk ke peta petualangan siswa (`/dashboard/siswa`) |
-| 4 | **Game Level 1** | Klik level 1 (`/level/1`) | Arena Word Search tampil interaktif, bisa drag kata dan terselesaikan |
-| 5 | **Canvas Drawing Level 2** | Lanjut ke `/level/2` | HTML5 Drawing canvas aktif, dapat menggambar ekspresi, ganti warna, dan submit |
-| 6 | **Curriculum Showcase** | Buka `/portfolio` | Halaman ringkasan kurikulum pembelajaran tampil lengkap |
+| 4 | **Game Level 1** | Buka `/level/1` | Permainan Word Search termuat interaktif, huruf dapat di-drag dan kata tersorot |
+| 5 | **Kanvas Gambar Level 2** | Buka `/level/2` | Kanvas HTML5 dapat dicoret menggunakan mouse/touch, palet warna berganti, dan tombol submit berfungsi |
+| 6 | **Portofolio** | Buka `/portfolio` | Halaman etalase kurikulum 30 modul aktivitas refleksi tampil lengkap |
 
 ---
 

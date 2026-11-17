@@ -2,23 +2,14 @@
 
 > Interactive gamified educational platform and teacher gradebook built with Next.js 14 and React 18.
 
-Book Games is an educational web application built with Next.js 14 (App Router) and Cloudflare D1 (Serverless SQLite), migrated from a Spring Boot 3 & MongoDB web application (`legacy-java/`). Deployed on Cloudflare Workers with OpenNext, it features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
+Book Games is an educational web application built with Next.js 14 (App Router) and SQLite, migrated from a legacy Spring Boot 3 & MongoDB web application (`legacy-java/`). It features 30 interactive mini-game levels across 5 psychological well-being dimensions, a student adventure progress map with achievement badges, and a teacher portal for student gradebook tracking and Excel export.
 
-[![Live Demo](https://img.shields.io/badge/Demo-book--games.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://book-games.widifirmaan.web.id)
-[![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare)](https://book-games.widifirmaan.web.id)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Cloudflare D1](https://img.shields.io/badge/Database-Cloudflare_D1-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/d1/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite_3-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://sqlite.org/)
 [![NextAuth.js](https://img.shields.io/badge/Auth-NextAuth.js_v4-blueviolet?style=flat-square)](https://next-auth.js.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-
----
-
-## Live Production
-
-- **URL:** [https://book-games.widifirmaan.web.id](https://book-games.widifirmaan.web.id)
-- **Platform:** Cloudflare Workers with OpenNext (`@opennextjs/cloudflare`)
-- **Database:** Cloudflare D1 Serverless SQL (`school-games-db`)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 ---
 
@@ -101,11 +92,10 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 - **Sequential Adventure Progression Map (`app/dashboard/siswa/page.tsx`)**: Student dashboard displaying dynamic level completion counts, category locks/unlocks based on completed prerequisite levels, and achievement badges (`CHAPTER_1_COMPLETE` through `CHAPTER_5_COMPLETE`, and `CONSISTENT_WORKER` 7-day streak awards).
 - **Teacher Gradebook & Analytics (`app/dashboard/guru/page.tsx`)**: Central educator management portal with school and class filtering, student progress tables across all 30 levels with completion status checkmarks, detailed submission response inspection, and 1-click Excel spreadsheet export via SheetJS (`.xlsx`).
 - **Unified Role-Based Authentication (`app/login/page.tsx` & `lib/authOptions.ts`)**: Credentials authentication powered by NextAuth.js separating Teacher (`GURU`) administrative rights from Student (`SISWA`) gameplay sessions.
-- **Cloudflare D1 Serverless SQLite Storage (`lib/models/User.ts` & `schema.sql`)**: High-performance relational database binding (`env.DB`) executing zero-latency SQL queries with serialized level response maps, submission timestamps, and award notification queues.
+- **Relational SQLite Storage (`schema.sql`)**: Relational database schema executing SQL queries with serialized level response maps, submission timestamps, and award notification queues.
 - **HTML5 Canvas Sketching Engine (`Level2Drawing.tsx`, `Level10Drawing.tsx`)**: Responsive drawing canvas supporting freehand pen strokes, color selection, stroke thickness adjustments, undo history, and direct data-URL base64 export.
 - **Interactive Word Search Arena (`Level1WordSearch.tsx`)**: 10x10 matrix word finder with real-time drag-to-select letter highlighting, horizontal/vertical word detection, and audio feedback.
-- **Curriculum Portfolio Showcase (`app/portfolio/page.tsx`)**: Printable A4-landscape digital curriculum overview displaying comprehensive activity modules and visual documentation.
-- **Spring Boot to Edge Migration (`legacy-java/`)**: Architectural modernization preserving the curriculum, game logic, and asset structure from the original Spring Boot 3 & MongoDB backend into Next.js App Router and Cloudflare D1.
+- **Curriculum Portfolio Showcase (`app/portfolio/page.tsx`)**: Printable digital curriculum overview displaying comprehensive activity modules and visual documentation.
 
 ---
 
@@ -114,7 +104,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 | Category | Technologies | Purpose |
 | :--- | :--- | :--- |
 | **Core Framework** | Next.js `14.2.35`, React `18.2.0` | App Router, Server Components, and API Route backend endpoints |
-| **Database** | Cloudflare D1 (Serverless SQLite) | Serverless relational SQL database storing user profiles and level progress |
+| **Database** | SQLite 3 | Relational database storing user profiles and level progress records |
 | **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route protection |
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
 | **Styling & UI** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
@@ -123,7 +113,7 @@ Book Games is an educational web application built with Next.js 14 (App Router) 
 
 ## Database Architecture
 
-Book Games utilizes Cloudflare D1 (SQLite) to persist student gameplay, timestamps, daily submissions, and teacher records. The schema (`schema.sql`) organizes data with JSON serialization:
+Book Games utilizes SQLite to persist student gameplay, timestamps, daily submissions, and teacher records. The schema (`schema.sql`) organizes data with JSON serialization:
 
 ```sql
 CREATE TABLE users (
@@ -167,25 +157,25 @@ CREATE INDEX idx_users_username ON users(username);
 │   ├── api/                 # NextAuth, level scoring, user management, and seed endpoints
 │   ├── components/          # 30 individual LevelGame React components
 │   └── page.tsx             # Public landing portal
-├── lib/                     # Database connection, D1 User model, and game curriculum data
+├── lib/                     # Database connection, User model, and game curriculum data
 ├── legacy-java/             # Original Spring Boot 3 & MongoDB web application source
-├── open-next.config.ts      # OpenNext Cloudflare adapter build configuration
-├── schema.sql               # Cloudflare D1 SQLite database schema and seed data
-├── wrangler.jsonc           # Cloudflare Workers configuration with custom domain routing
+├── schema.sql               # SQLite database schema and pre-seeded demo records
 ├── screenshots/             # Showcase mockups
+├── package.json
 └── README.md
 ```
 
 ---
 
-## Getting Started & Local Development
+## Local Setup & Deployment
 
-### Prerequisites
+### 1. Prerequisites
 
-- **Node.js**: Version 18.17.0 or higher
-- **Cloudflare Wrangler CLI**: Installed locally or run via `npx wrangler`
+- **Node.js**: Version `18.17.0` or higher (`20.x` recommended)
+- **npm** or **pnpm**
+- **SQLite 3**: Native CLI (`sqlite3`)
 
-### Environment Variables Setup Tutorial
+### 2. Environment Variables Setup
 
 Create a `.env.local` file in the root directory by copying the provided `.env.example`:
 
@@ -195,48 +185,59 @@ cp .env.example .env.local
 
 Configure the following variables in `.env.local`:
 
-| Variable | Description | Example / Default |
-| :--- | :--- | :--- |
-| `NEXTAUTH_SECRET` | Secret key used to encrypt session tokens (generate using `openssl rand -base64 32`) | `your_secret_key_here` |
-| `NEXTAUTH_URL` | Canonical root URL of the application | `http://localhost:3000` (Local) / `https://book-games.widifirmaan.web.id` (Production) |
+```env
+NEXTAUTH_SECRET=your_super_secret_key_here
+NEXTAUTH_URL=http://localhost:3000
+```
 
-### Installation & Step-by-Step Setup
+### 3. Installation & Setup Database Lokal
+
+Inisialisasi skema tabel dan data awal (seeder) ke database SQLite lokal:
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/widifirmaan/nextjs-book-games.git
 cd nextjs-book-games
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Configure environment variables
-cp .env.example .env.local
+# Setup SQLite database & demo seeder
+sqlite3 local.db < schema.sql
 
-# 4. Initialize Cloudflare D1 Database
-# To seed local SQLite database (.wrangler/state):
-npx wrangler d1 execute school-games-db --local --file=schema.sql
+# Atau via npm script
+npm run db:setup
+```
 
-# To seed remote Cloudflare D1 database:
-npx wrangler d1 execute school-games-db --remote --file=schema.sql
+#### Demo Seeder Accounts:
+Data awal akun demo telah disertakan langsung di dalam `schema.sql`:
 
-# 5. Start local Next.js development server
+| Role | Username | Password | Default Route | Accessible Features |
+| :--- | :--- | :--- | :--- | :--- |
+| **Guru (Teacher)** | `guru` | `password` | `/dashboard/guru` | Rekap nilai siswa, filter kelas/sekolah, export Excel `.xlsx` |
+| **Siswa (Student)** | `siswa` | `password` | `/dashboard/siswa` | Peta petualangan 30 level mini-game, badges, progress tracker |
+
+### 4. Menjalankan Server Lokal
+
+```bash
+# Jalankan server frontend Next.js
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your web browser. Default accounts are pre-seeded in `schema.sql`:
+Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-| Role | Username | Password |
-| :--- | :--- | :--- |
-| **Teacher (`GURU`)** | `guru` | `password` |
-| **Student (`SISWA`)** | `siswa` | `password` |
+### 5. Panduan Uji Manual (Testing Checklist)
 
-### Production Build & Deployment
+Lakukan verifikasi manual berikut di browser:
 
-```bash
-# Build OpenNext Cloudflare bundle and deploy to Cloudflare Workers
-npm run deploy
-```
+| No | Fitur yang Diuji | Langkah Pengujian | Hasil yang Diharapkan |
+| :---: | :--- | :--- | :--- |
+| 1 | **Login Portal Guru** | Buka `/login`, login dengan `guru` / `password` | Masuk ke dashboard guru (`/dashboard/guru`) |
+| 2 | **Gradebook & Export** | Buka tabel siswa di `/dashboard/guru`, klik tombol Export | File rekapitulasi nilai `.xlsx` terunduh dengan benar via SheetJS |
+| 3 | **Login Siswa** | Logout, login dengan `siswa` / `password` | Masuk ke peta petualangan siswa (`/dashboard/siswa`) |
+| 4 | **Game Level 1** | Klik level 1 (`/level/1`) | Arena Word Search tampil interaktif, bisa drag kata dan terselesaikan |
+| 5 | **Canvas Drawing Level 2** | Lanjut ke `/level/2` | HTML5 Drawing canvas aktif, dapat menggambar ekspresi, ganti warna, dan submit |
+| 6 | **Curriculum Showcase** | Buka `/portfolio` | Halaman ringkasan kurikulum pembelajaran tampil lengkap |
 
 ---
 

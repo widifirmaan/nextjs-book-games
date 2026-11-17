@@ -7,6 +7,8 @@
         "build": "next build",
         "build:worker": "npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion",
         "deploy": "npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion && wrangler deploy",
+        "db:setup": "sqlite3 local.db < schema.sql",
+        "db:seed": "npx wrangler d1 execute school-games-db --local --file=schema.sql",
         "start": "next start",
         "lint": "next lint"
     },

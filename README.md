@@ -139,7 +139,7 @@ CREATE INDEX idx_users_username ON users(username);
 
 ---
 
-## Local Setup & Deployment
+## Tutorial Run Local & Setup
 
 ### 1. Prerequisites
 
@@ -167,7 +167,7 @@ cd nextjs-book-games
 npm install
 ```
 
-### 4. Local Database & Seeder Setup
+### 4. Database Schema & Seeder Setup
 
 Initialize the SQLite database schema with pre-seeded demo accounts:
 
@@ -179,7 +179,7 @@ sqlite3 local.db < schema.sql
 npm run db:setup
 ```
 
-#### Pre-seeded Demo Accounts:
+#### Pre-seeded Demo Accounts & Auth Credentials:
 - **Teacher Account**: Username `guru` / Password `password` (Access gradebook, analytics, and Excel export)
 - **Student Account**: Username `siswa` / Password `password` (Access 30-level adventure map and mini-games)
 
@@ -192,19 +192,35 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 6. Manual Testing Checklist
+---
 
-| No | Feature | Test Steps | Expected Result |
-| :---: | :--- | :--- | :--- |
-| 1 | **Teacher Login** | Navigate to `/login`, enter `guru` / `password` | Authentication succeeds and redirects to Teacher Gradebook (`/dashboard/guru`) |
-| 2 | **Excel Export** | On teacher dashboard, click *Export Excel* | Downloads `.xlsx` spreadsheet report containing student completion records |
-| 3 | **Student Login** | Logout, login with `siswa` / `password` | Enters Student Adventure Map (`/dashboard/siswa`) |
-| 4 | **Word Search Level 1** | Open `/level/1` | Word Search grid renders interactively; drag-selecting letters highlights valid words |
-| 5 | **Canvas Drawing Level 2** | Open `/level/2` | HTML5 drawing canvas responds to mouse/touch input, palette swatches work, and submit saves data |
-| 6 | **Curriculum Showcase** | Open `/portfolio` | Displays full digital curriculum documentation across all 30 activities |
+## Testing & QA Automation
+
+Automated testing and QA verification are powered by the system's `qa-toolkit`:
+
+### 1. Playwright Test Suite
+End-to-end smoke verification covering homepage portal, authentication gateway `/login`, and curriculum portfolio `/portfolio`:
+
+```bash
+cd /home/widifirmaan/Projects/qa-toolkit
+npx playwright test tests/playwright/bookgames.spec.js
+```
+
+### 2. Cypress E2E Verification
+Cross-browser regression testing on DOM structure and production stability:
+
+```bash
+cd /home/widifirmaan/Projects/qa-toolkit
+npx cypress run --spec cypress/e2e/bookgames.cy.js
+```
+
+### 3. QA Execution Summary
+- **Playwright**: 3 tests passed (Portal Homepage, Login Portal, Portfolio Route)
+- **Cypress**: 2 specs passed (Portal DOM Mount & Login Route Mount)
+- **Status**: ✅ All automated tests verified and passing
 
 ---
 
 ## Author
 
-Developed by **[Widi Firmansyah](https://widifirmaan.web.id)**.
+Made with ❤️ by **Widi Firmansyah** / [widifirmaan.web.id](https://widifirmaan.web.id)

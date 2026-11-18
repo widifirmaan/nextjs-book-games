@@ -1,4 +1,4 @@
-# Book Games
+# Book Games 📚
 
 > Gamified educational platform and teacher gradebook featuring 30 interactive psychological reflection mini-games for primary students.
 
@@ -22,7 +22,7 @@
 
 ### Platform & Authentication
 
-| Desktop | Mobile |
+| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
 | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
 | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Desktop.png) | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Mobile.png) |
@@ -30,7 +30,7 @@
 
 ### Student Experience
 
-| Desktop | Mobile |
+| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
 | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Desktop.png) | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Mobile.png) |
 | **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Desktop.png) | **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Mobile.png) |
@@ -68,7 +68,7 @@
 
 ### Teacher Console
 
-| Desktop | Mobile |
+| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
 | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
 | **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Desktop.png) | **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Mobile.png) |
@@ -78,7 +78,7 @@
 
 ---
 
-## Features
+## Fitur
 
 - **30 Gamified Psychological Activities (`app/level/[id]/page.tsx`)**: Educational reflection exercises divided across 5 Psychological Well-Being (PWB) dimensions:
   - **Dimension 1: Self Acceptance (Levels 1–7)**: Character word search grid (`Level1WordSearch.tsx`), multi-expression facial sketching (`Level2Drawing.tsx`), hope balloons release (`Level3Games.tsx`), mirror reflection, and self-acceptance box.
@@ -104,40 +104,6 @@
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
 | **Styling** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
 | **Type System** | TypeScript `5.0` | Type-safe level components and student submission payloads |
-
----
-
-## Database Architecture
-
-Book Games persists user credentials, gameplay progress, and scores in a relational SQLite table (`schema.sql`):
-
-```sql
-CREATE TABLE users (
-    id TEXT PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL,
-    role TEXT NOT NULL CHECK(role IN ('GURU', 'SISWA')),
-    fullName TEXT,
-    email TEXT,
-    kelas TEXT,
-    schoolName TEXT,
-    photoUrl TEXT,
-    level INTEGER DEFAULT 1,
-    levels TEXT DEFAULT '{}',               -- JSON map of level completions
-    indukStartTimes TEXT DEFAULT '{}',      -- Session start timestamps
-    indukEndTimes TEXT DEFAULT '{}',        -- Session finish timestamps
-    dailySubmissions TEXT DEFAULT '{}',     -- Daily progress records
-    awards TEXT DEFAULT '[]',               -- Earned achievement badge IDs
-    newAwardsToNotify TEXT DEFAULT '[]',    -- Pending badge notification queue
-    createdAt TEXT DEFAULT (datetime('now')),
-    updatedAt TEXT DEFAULT (datetime('now'))
-);
-
-CREATE INDEX idx_users_role ON users(role);
-CREATE INDEX idx_users_username ON users(username);
-```
-
----
 
 ## Tutorial Run Local & Setup
 
@@ -168,6 +134,34 @@ npm install
 ```
 
 ### 4. Database Schema & Seeder Setup
+
+Book Games persists user credentials, gameplay progress, and scores in a relational SQLite table (`schema.sql`):
+
+```sql
+CREATE TABLE users (
+    id TEXT PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role TEXT NOT NULL CHECK(role IN ('GURU', 'SISWA')),
+    fullName TEXT,
+    email TEXT,
+    kelas TEXT,
+    schoolName TEXT,
+    photoUrl TEXT,
+    level INTEGER DEFAULT 1,
+    levels TEXT DEFAULT '{}',               -- JSON map of level completions
+    indukStartTimes TEXT DEFAULT '{}',      -- Session start timestamps
+    indukEndTimes TEXT DEFAULT '{}',        -- Session finish timestamps
+    dailySubmissions TEXT DEFAULT '{}',     -- Daily progress records
+    awards TEXT DEFAULT '[]',               -- Earned achievement badge IDs
+    newAwardsToNotify TEXT DEFAULT '[]',    -- Pending badge notification queue
+    createdAt TEXT DEFAULT (datetime('now')),
+    updatedAt TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX idx_users_role ON users(role);
+CREATE INDEX idx_users_username ON users(username);
+```
 
 Initialize the SQLite database schema with pre-seeded demo accounts:
 

@@ -20,21 +20,61 @@
 
 ## Screenshots
 
+### Platform & Authentication
+
 | Desktop | Mobile |
 | :---: | :---: |
 | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
 | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Desktop.png) | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Mobile.png) |
+| **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Desktop.png) | **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Mobile.png) |
+
+### Student Experience
+
+| Desktop | Mobile |
+| :---: | :---: |
 | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Desktop.png) | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Mobile.png) |
-| **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
+| **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Desktop.png) | **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Mobile.png) |
 | **Level 1: Word Search Matrix Arena**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Desktop.png) | **Level 1: Word Search Matrix Arena**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Mobile.png) |
 | **Level 2: Emotional Facial Sketching**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Desktop.png) | **Level 2: Emotional Facial Sketching**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Mobile.png) |
 | **Level 3: Interactive Hope Balloons**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Desktop.png) | **Level 3: Interactive Hope Balloons**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Mobile.png) |
+| **Level 4: Self-Reflection Questionnaire**<br>![Level 4 Refleksi Diri](screenshots/Level%204%20Refleksi%20Diri%20Desktop.png) | **Level 4: Self-Reflection Questionnaire**<br>![Level 4 Refleksi Diri](screenshots/Level%204%20Refleksi%20Diri%20Mobile.png) |
+| **Level 5: Concentric Rings Reflection**<br>![Level 5 Rings](screenshots/Level%205%20Rings%20Desktop.png) | **Level 5: Concentric Rings Reflection**<br>![Level 5 Rings](screenshots/Level%205%20Rings%20Mobile.png) |
+| **Level 6: Mirror Reflection**<br>![Level 6 Refleksi Cermin](screenshots/Level%206%20Refleksi%20Cermin%20Desktop.png) | **Level 6: Mirror Reflection**<br>![Level 6 Refleksi Cermin](screenshots/Level%206%20Refleksi%20Cermin%20Mobile.png) |
+| **Level 7: Reflection Box**<br>![Level 7 Refleksi Kotak](screenshots/Level%207%20Refleksi%20Kotak%20Desktop.png) | **Level 7: Reflection Box**<br>![Level 7 Refleksi Kotak](screenshots/Level%207%20Refleksi%20Kotak%20Mobile.png) |
 | **Level 8: Anxiety Elixir Potion Mixing**<br>![Level 8 Anxiety Elixir](screenshots/Level%208%20Anxiety%20Elixir%20Desktop.png) | **Level 8: Anxiety Elixir Potion Mixing**<br>![Level 8 Anxiety Elixir](screenshots/Level%208%20Anxiety%20Elixir%20Mobile.png) |
+| **Level 9: Influence Circle Reflection**<br>![Level 9 Refleksi Lingkaran](screenshots/Level%209%20Refleksi%20Lingkaran%20Desktop.png) | **Level 9: Influence Circle Reflection**<br>![Level 9 Refleksi Lingkaran](screenshots/Level%209%20Refleksi%20Lingkaran%20Mobile.png) |
 | **Level 10: Freehand Drawing Canvas**<br>![Level 10 Canvas](screenshots/Level%2010%20Canvas%20Desktop.png) | **Level 10: Freehand Drawing Canvas**<br>![Level 10 Canvas](screenshots/Level%2010%20Canvas%20Mobile.png) |
+| **Level 11: Relaxing Soundtrack Selection**<br>![Level 11 Soundtrack Musik](screenshots/Level%2011%20Soundtrack%20Musik%20Desktop.png) | **Level 11: Relaxing Soundtrack Selection**<br>![Level 11 Soundtrack Musik](screenshots/Level%2011%20Soundtrack%20Musik%20Mobile.png) |
+| **Level 12: Are You Okay Check-In**<br>![Level 12 Are You Okay](screenshots/Level%2012%20Are%20You%20Okay%20Desktop.png) | **Level 12: Are You Okay Check-In**<br>![Level 12 Are You Okay](screenshots/Level%2012%20Are%20You%20Okay%20Mobile.png) |
 | **Level 13: Tree of Hope Leaves**<br>![Level 13 Pohon Harapan](screenshots/Level%2013%20Pohon%20Harapan%20Desktop.png) | **Level 13: Tree of Hope Leaves**<br>![Level 13 Pohon Harapan](screenshots/Level%2013%20Pohon%20Harapan%20Mobile.png) |
+| **Level 14: Biggest Dream Visualization**<br>![Level 14 Mimpi Terbesar](screenshots/Level%2014%20Mimpi%20Terbesar%20Desktop.png) | **Level 14: Biggest Dream Visualization**<br>![Level 14 Mimpi Terbesar](screenshots/Level%2014%20Mimpi%20Terbesar%20Mobile.png) |
+| **Level 15: Self-Reflection Prompts**<br>![Level 15 Refleksi Diri](screenshots/Level%2015%20Refleksi%20Diri%20Desktop.png) | **Level 15: Self-Reflection Prompts**<br>![Level 15 Refleksi Diri](screenshots/Level%2015%20Refleksi%20Diri%20Mobile.png) |
+| **Level 16: Cloud Imagination**<br>![Level 16 Imajinasi Awan](screenshots/Level%2016%20Imajinasi%20Awan%20Desktop.png) | **Level 16: Cloud Imagination**<br>![Level 16 Imajinasi Awan](screenshots/Level%2016%20Imajinasi%20Awan%20Mobile.png) |
+| **Level 17: Sticky Notes Planning**<br>![Level 17 Rencana Sticky Notes](screenshots/Level%2017%20Rencana%20Sticky%20Notes%20Desktop.png) | **Level 17: Sticky Notes Planning**<br>![Level 17 Rencana Sticky Notes](screenshots/Level%2017%20Rencana%20Sticky%20Notes%20Mobile.png) |
+| **Level 18: Tangga Perubahan Step 1**<br>![Level 18 Tangga Perubahan 1](screenshots/Level%2018%20Tangga%20Perubahan%201%20Desktop.png) | **Level 18: Tangga Perubahan Step 1**<br>![Level 18 Tangga Perubahan 1](screenshots/Level%2018%20Tangga%20Perubahan%201%20Mobile.png) |
+| **Level 19: Tangga Perubahan Step 2**<br>![Level 19 Tangga Perubahan 2](screenshots/Level%2019%20Tangga%20Perubahan%202%20Desktop.png) | **Level 19: Tangga Perubahan Step 2**<br>![Level 19 Tangga Perubahan 2](screenshots/Level%2019%20Tangga%20Perubahan%202%20Mobile.png) |
+| **Level 20: Tangga Perubahan Step 3**<br>![Level 20 Tangga Perubahan 3](screenshots/Level%2020%20Tangga%20Perubahan%203%20Desktop.png) | **Level 20: Tangga Perubahan Step 3**<br>![Level 20 Tangga Perubahan 3](screenshots/Level%2020%20Tangga%20Perubahan%203%20Mobile.png) |
+| **Level 21: Tangga Perubahan Step 4**<br>![Level 21 Tangga Perubahan 4](screenshots/Level%2021%20Tangga%20Perubahan%204%20Desktop.png) | **Level 21: Tangga Perubahan Step 4**<br>![Level 21 Tangga Perubahan 4](screenshots/Level%2021%20Tangga%20Perubahan%204%20Mobile.png) |
+| **Level 22: Tangga Perubahan Step 5**<br>![Level 22 Tangga Perubahan 5](screenshots/Level%2022%20Tangga%20Perubahan%205%20Desktop.png) | **Level 22: Tangga Perubahan Step 5**<br>![Level 22 Tangga Perubahan 5](screenshots/Level%2022%20Tangga%20Perubahan%205%20Mobile.png) |
+| **Level 23: Tangga Perubahan Step 6**<br>![Level 23 Tangga Perubahan 6](screenshots/Level%2023%20Tangga%20Perubahan%206%20Desktop.png) | **Level 23: Tangga Perubahan Step 6**<br>![Level 23 Tangga Perubahan 6](screenshots/Level%2023%20Tangga%20Perubahan%206%20Mobile.png) |
+| **Level 24: Tangga Perubahan Step 7**<br>![Level 24 Tangga Perubahan 7](screenshots/Level%2024%20Tangga%20Perubahan%207%20Desktop.png) | **Level 24: Tangga Perubahan Step 7**<br>![Level 24 Tangga Perubahan 7](screenshots/Level%2024%20Tangga%20Perubahan%207%20Mobile.png) |
 | **Level 25: Self-Exploration Questionnaire**<br>![Level 25 Eksplorasi Diri](screenshots/Level%2025%20Eksplorasi%20Diri%20Desktop.png) | **Level 25: Self-Exploration Questionnaire**<br>![Level 25 Eksplorasi Diri](screenshots/Level%2025%20Eksplorasi%20Diri%20Mobile.png) |
+| **Level 26: Circle of Time**<br>![Level 26 Lingkar Waktu](screenshots/Level%2026%20Lingkar%20Waktu%20Desktop.png) | **Level 26: Circle of Time**<br>![Level 26 Lingkar Waktu](screenshots/Level%2026%20Lingkar%20Waktu%20Mobile.png) |
+| **Level 27: Gratitude Map**<br>![Level 27 Peta Bersyukur](screenshots/Level%2027%20Peta%20Bersyukur%20Desktop.png) | **Level 27: Gratitude Map**<br>![Level 27 Peta Bersyukur](screenshots/Level%2027%20Peta%20Bersyukur%20Mobile.png) |
+| **Level 28: Goal Compass**<br>![Level 28 Kompas Tujuan](screenshots/Level%2028%20Kompas%20Tujuan%20Desktop.png) | **Level 28: Goal Compass**<br>![Level 28 Kompas Tujuan](screenshots/Level%2028%20Kompas%20Tujuan%20Mobile.png) |
+| **Level 29: Letter to the Future**<br>![Level 29 Surat Masa Depan](screenshots/Level%2029%20Surat%20Masa%20Depan%20Desktop.png) | **Level 29: Letter to the Future**<br>![Level 29 Surat Masa Depan](screenshots/Level%2029%20Surat%20Masa%20Depan%20Mobile.png) |
 | **Level 30: Scoop of Hope Ice Cream**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Desktop.png) | **Level 30: Scoop of Hope Ice Cream**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Mobile.png) |
-| **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Desktop.png) | **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Mobile.png) |
+| **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Desktop.png) | **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Mobile.png) |
+
+### Teacher Console
+
+| Desktop | Mobile |
+| :---: | :---: |
+| **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
+| **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Desktop.png) | **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Mobile.png) |
+| **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Desktop.png) | **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Mobile.png) |
+| **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Desktop.png) | **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Mobile.png) |
+| **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Desktop.png) | **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Mobile.png) |
 
 ---
 

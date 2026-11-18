@@ -1,4 +1,4 @@
-# Book Games 📚
+# Book Games
 
 > Gamified educational platform and teacher gradebook featuring 30 interactive psychological reflection mini-games for primary students.
 
@@ -26,6 +26,19 @@
 | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
 | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Desktop.png) | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Mobile.png) |
 | **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Desktop.png) | **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Mobile.png) |
+---
+
+### Teacher Console
+
+| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
+| :---: | :---: |
+| **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
+| **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Desktop.png) | **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Mobile.png) |
+| **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Desktop.png) | **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Mobile.png) |
+| **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Desktop.png) | **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Mobile.png) |
+| **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Desktop.png) | **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Mobile.png) |
+
+---
 
 ### Student Experience
 
@@ -34,6 +47,7 @@
 | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Desktop.png) | **Student Adventure Progression Map**<br>![Petualangan Siswa](screenshots/Petualangan%20Siswa%20Mobile.png) |
 | **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Desktop.png) | **Student Logout Confirmation Modal**<br>![Petualangan Siswa Modal Logout](screenshots/Petualangan%20Siswa%20Modal%20Logout%20Mobile.png) |
 | **Level 1: Word Search Matrix Arena**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Desktop.png) | **Level 1: Word Search Matrix Arena**<br>![Level 1 Word Search](screenshots/Level%201%20Word%20Search%20Mobile.png) |
+| **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Desktop.png) | **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Mobile.png) |
 | **Level 2: Emotional Facial Sketching**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Desktop.png) | **Level 2: Emotional Facial Sketching**<br>![Level 2 Gambar](screenshots/Level%202%20Gambar%20Mobile.png) |
 | **Level 3: Interactive Hope Balloons**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Desktop.png) | **Level 3: Interactive Hope Balloons**<br>![Level 3 Balon Harapan](screenshots/Level%203%20Balon%20Harapan%20Mobile.png) |
 | **Level 4: Self-Reflection Questionnaire**<br>![Level 4 Refleksi Diri](screenshots/Level%204%20Refleksi%20Diri%20Desktop.png) | **Level 4: Self-Reflection Questionnaire**<br>![Level 4 Refleksi Diri](screenshots/Level%204%20Refleksi%20Diri%20Mobile.png) |
@@ -63,19 +77,7 @@
 | **Level 28: Goal Compass**<br>![Level 28 Kompas Tujuan](screenshots/Level%2028%20Kompas%20Tujuan%20Desktop.png) | **Level 28: Goal Compass**<br>![Level 28 Kompas Tujuan](screenshots/Level%2028%20Kompas%20Tujuan%20Mobile.png) |
 | **Level 29: Letter to the Future**<br>![Level 29 Surat Masa Depan](screenshots/Level%2029%20Surat%20Masa%20Depan%20Desktop.png) | **Level 29: Letter to the Future**<br>![Level 29 Surat Masa Depan](screenshots/Level%2029%20Surat%20Masa%20Depan%20Mobile.png) |
 | **Level 30: Scoop of Hope Ice Cream**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Desktop.png) | **Level 30: Scoop of Hope Ice Cream**<br>![Level 30 Scoop of Hope](screenshots/Level%2030%20Scoop%20of%20Hope%20Mobile.png) |
-| **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Desktop.png) | **Level 1: Word Selection Submit Confirmation**<br>![Level 1 Modal Submit Confirm](screenshots/Level%201%20Modal%20Submit%20Confirm%20Mobile.png) |
 
-### Teacher Console
-
-| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
-| :---: | :---: |
-| **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Desktop.png) | **Teacher Gradebook & Class Analytics**<br>![Dashboard Guru](screenshots/Dashboard%20Guru%20Mobile.png) |
-| **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Desktop.png) | **Teacher Console: Add Student Modal**<br>![Dashboard Guru Modal Add Student](screenshots/Dashboard%20Guru%20Modal%20Add%20Student%20Mobile.png) |
-| **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Desktop.png) | **Teacher Console: Student Level Detail Modal**<br>![Dashboard Guru Modal Level Detail](screenshots/Dashboard%20Guru%20Modal%20Level%20Detail%20Mobile.png) |
-| **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Desktop.png) | **Teacher Console: Edit Student Modal**<br>![Dashboard Guru Modal Edit Student](screenshots/Dashboard%20Guru%20Modal%20Edit%20Student%20Mobile.png) |
-| **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Desktop.png) | **Teacher Console: Delete Student Confirmation**<br>![Dashboard Guru Modal Delete Confirm](screenshots/Dashboard%20Guru%20Modal%20Delete%20Confirm%20Mobile.png) |
-
----
 
 ## Fitur
 

@@ -25,7 +25,6 @@
 | :---: | :---: |
 | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Portal Homepage**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
 | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Desktop.png) | **Unified Role-Based Authentication**<br>![Login](screenshots/Login%20Mobile.png) |
-| **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Desktop.png) | **Curriculum Portfolio Overview**<br>![Portofolio Kurikulum](screenshots/Portofolio%20Kurikulum%20Mobile.png) |
 ---
 
 ### Teacher Console

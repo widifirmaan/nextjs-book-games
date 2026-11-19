@@ -139,7 +139,7 @@ npm install
 Book Games persists user credentials, gameplay progress, and scores in a relational SQLite table (`schema.sql`):
 
 ```sql
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id TEXT PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
@@ -160,8 +160,8 @@ CREATE TABLE users (
     updatedAt TEXT DEFAULT (datetime('now'))
 );
 
-CREATE INDEX idx_users_role ON users(role);
-CREATE INDEX idx_users_username ON users(username);
+CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 ```
 
 Initialize the SQLite database schema with pre-seeded demo accounts:

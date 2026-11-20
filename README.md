@@ -99,7 +99,7 @@
 | Category | Technology | Description / Purpose |
 | :--- | :--- | :--- |
 | **Core Framework** | Next.js `14.2.35` (App Router), React `18.2.0` | Server Components, dynamic level routing, and API Route backend |
-| **Database** | SQLite 3 | Relational database storing user profiles and serialized level records |
+| **Database** | SQLite 3 / Cloudflare D1 (In-Memory Fallback locally) | Relational database storing user profiles and serialized level records |
 | **Authentication** | NextAuth.js `4.24.5` | Role-based credential session handling and route protection |
 | **Spreadsheet Engine** | SheetJS (xlsx) `0.18.5` | Client-side grade report compilation and XLSX binary export |
 | **Styling** | Tailwind CSS `3.3.0` | Accessible kid-friendly color palettes and responsive grid layouts |
@@ -111,7 +111,7 @@
 
 - **Node.js**: Version `18.17.0` or higher (`20.x` recommended)
 - **npm** or **pnpm**
-- **SQLite 3**: Native CLI (`sqlite3`)
+- Database: **No external database required** (built-in in-memory fallback store for local dev; Cloudflare D1 for edge deployment).
 
 ### 2. Environment Variables Setup
 
@@ -163,14 +163,11 @@ CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
 CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 ```
 
-Initialize the SQLite database schema with pre-seeded demo accounts:
+For local development (`npm run dev`), the app automatically provides a built-in in-memory fallback store pre-populated with demo credentials—requiring zero external database configuration. To seed a local Cloudflare D1 database simulation via Wrangler:
 
 ```bash
-# Initialize schema and seed accounts
-sqlite3 local.db < schema.sql
-
-# Or via npm script
-npm run db:setup
+# Seed Cloudflare D1 database locally via Wrangler
+npm run db:seed
 ```
 
 #### Pre-seeded Demo Accounts & Auth Credentials:

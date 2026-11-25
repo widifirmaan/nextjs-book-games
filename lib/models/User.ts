@@ -231,6 +231,36 @@ export class User {
         return user;
     }
 
+    static async createMany(items: any[]): Promise<User[]> {
+        if (!Array.isArray(items) || items.length === 0) return [];
+        const db = await resolveDb();
+        const users: User[] = [];
+        const stmts = [];
+        for (const data of items) {
+            const id = data.id || `user-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+            const user = new User({ ...data, id });
+            users.push(user);
+            stmts.push(
+                db.prepare(`
+                    INSERT INTO users (id, username, password, role, fullName, email, kelas, schoolName, photoUrl, level, levels, indukStartTimes, indukEndTimes, dailySubmissions, awards, newAwardsToNotify)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                `).bind(
+                    id, user.username, user.password, user.role, user.fullName || '', user.email || '',
+                    user.kelas || '', user.schoolName || '', user.photoUrl || '', user.level || 1,
+                    serializeMap(user.levels), serializeMap(user.indukStartTimes),
+                    serializeMap(user.indukEndTimes), serializeMap(user.dailySubmissions),
+                    JSON.stringify(user.awards || []), JSON.stringify(user.newAwardsToNotify || [])
+                )
+            );
+        }
+        if (typeof db.batch === 'function') {
+            await db.batch(stmts);
+        } else {
+            for (const s of stmts) await s.run();
+        }
+        return users;
+    }
+
     static findByIdAndUpdate(id: string, updateData: any, _options?: any): any {
         let selectFields = '';
         const run = async () => {

@@ -7,6 +7,20 @@ import bcrypt from 'bcryptjs';
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/authOptions"
 
+export async function GET(req: Request, { params }: { params: { id: string } }) {
+    const session = await getServerSession(authOptions);
+    if (!session || ((session.user as any).role !== 'GURU' && (session.user as any).id !== params.id)) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    await dbConnect();
+    const user = await User.findById(params.id);
+    if (!user) {
+        return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
+    return NextResponse.json(user.toJSON());
+}
+
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
     const session = await getServerSession(authOptions);
     if (!session || (session.user as any).role !== 'GURU') {
@@ -21,6 +35,13 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
         updateData.password = await bcrypt.hash(updateData.password, 10);
     } else {
         delete updateData.password;
+    }
+
+    if (updateData.username) {
+        const conflict = await User.findOne({ username: updateData.username });
+        if (conflict && conflict.id !== params.id) {
+            return NextResponse.json({ error: 'Username already exists' }, { status: 400 });
+        }
     }
 
     const updatedUser = await User.findByIdAndUpdate(params.id, updateData, { new: true }).select('-password');

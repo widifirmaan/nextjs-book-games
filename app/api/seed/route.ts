@@ -18,11 +18,16 @@ export async function GET(req: Request) {
     await dbConnect();
 
     try {
-        // 1. Create Guru
-        const existingGuru = await User.findOne({ username: 'guru' });
+        const [existingGuru, existingSiswa] = await Promise.all([
+            User.findOne({ username: 'guru' }),
+            User.findOne({ username: 'siswa' }),
+        ]);
+
+        const toCreate: any[] = [];
         if (!existingGuru) {
             const hashedPassword = await bcrypt.hash('password', 10);
-            await User.create({
+            toCreate.push({
+                id: 'guru-1',
                 username: 'guru',
                 password: hashedPassword,
                 role: 'GURU',
@@ -31,14 +36,12 @@ export async function GET(req: Request) {
                 schoolName: 'SMA Negeri 1',
                 photoUrl: 'https://i.pravatar.cc/150?u=guru'
             });
-            console.log('User guru created');
         }
 
-        // 2. Create Siswa
-        const existingSiswa = await User.findOne({ username: 'siswa' });
         if (!existingSiswa) {
             const hashedPassword = await bcrypt.hash('password', 10);
-            const siswa = await User.create({
+            toCreate.push({
+                id: 'siswa-1',
                 username: 'siswa',
                 password: hashedPassword,
                 role: 'SISWA',
@@ -47,18 +50,19 @@ export async function GET(req: Request) {
                 kelas: 'XII-A',
                 schoolName: 'SMA Negeri 1',
                 photoUrl: 'https://i.pravatar.cc/150?u=siswa',
-                levels: {}
+                levels: {
+                    level1: JSON.stringify({
+                        "Siapakah_presiden_pertama_Indonesia?": "Soekarno",
+                        "Apa_warna_bendera_Indonesia?": "Merah Putih",
+                        "status": "completed",
+                        "stars": 3
+                    })
+                }
             });
+        }
 
-            // Add sample level data matching Java DataInitializer
-            siswa.levels.set("level1", JSON.stringify({
-                "Siapakah_presiden_pertama_Indonesia?": "Soekarno",
-                "Apa_warna_bendera_Indonesia?": "Merah Putih",
-                "status": "completed",
-                "stars": 3
-            }));
-            await siswa.save();
-            console.log('User siswa created');
+        if (toCreate.length > 0) {
+            await User.createMany(toCreate);
         }
 
         return NextResponse.json({ message: 'Database seeded successfully. You can now login.' });

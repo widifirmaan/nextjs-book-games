@@ -1,4 +1,5 @@
-// Cloudflare D1 User Model and Data Access Layer for Book Games
+import { getD1 } from '@/lib/mongodb';
+import { getLocalD1 } from '@/lib/db-adapter.mjs';
 
 export interface UserRow {
     id: string;
@@ -22,63 +23,23 @@ export interface UserRow {
     updatedAt?: string;
 }
 
-// In-memory fallback if D1 context is not yet loaded (e.g. static pre-render or local dev without binding)
-const memoryStore = new Map<string, any>();
+async function resolveDb(): Promise<any> {
+    const d1 = getD1();
+    if (d1) return d1;
+    if (typeof process !== 'undefined' && process.env.CLOUDFLARE_WORKER !== '1') {
+        const localDb = await getLocalD1();
+        if (localDb) return localDb;
+    }
+    throw new Error('Database binding unavailable');
+}
 
-// Seed default guru and siswa accounts for fallback
-memoryStore.set('guru', {
-    id: 'guru-1',
-    username: 'guru',
-    password: '$2a$10$xz4xlJZX/iBvXYQbo9ouC.cM5Odxl.GdPAZgETRYCewnpJunPOGYW',
-    role: 'GURU',
-    fullName: 'Budi Guru',
-    email: 'guru@sekolah.id',
-    schoolName: 'SMA Negeri 1',
-    photoUrl: 'https://i.pravatar.cc/150?u=guru',
-    level: 1,
-    levels: '{}',
-    indukStartTimes: '{}',
-    indukEndTimes: '{}',
-    dailySubmissions: '{}',
-    awards: '[]',
-    newAwardsToNotify: '[]',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-});
-
-memoryStore.set('siswa', {
-    id: 'siswa-1',
-    username: 'siswa',
-    password: '$2a$10$xz4xlJZX/iBvXYQbo9ouC.cM5Odxl.GdPAZgETRYCewnpJunPOGYW',
-    role: 'SISWA',
-    fullName: 'Ani Siswa',
-    email: 'siswa@sekolah.id',
-    kelas: 'XII-A',
-    schoolName: 'SMA Negeri 1',
-    photoUrl: 'https://i.pravatar.cc/150?u=siswa',
-    level: 1,
-    levels: JSON.stringify({
-        level1: JSON.stringify({
-            "Siapakah_presiden_pertama_Indonesia?": "Soekarno",
-            "Apa_warna_bendera_Indonesia?": "Merah Putih",
-            "status": "completed",
-            "stars": 3
-        })
-    }),
-    indukStartTimes: '{}',
-    indukEndTimes: '{}',
-    dailySubmissions: '{}',
-    awards: '[]',
-    newAwardsToNotify: '[]',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-});
-
-export function getD1(): any {
-    const ctx = (globalThis as any)[Symbol.for('__cloudflare-context__')];
-    if (ctx?.env?.DB) return ctx.env.DB;
-    if ((globalThis as any).DB) return (globalThis as any).DB;
-    return null;
+function serializeMap(m: Map<string, any> | undefined): string {
+    if (!m) return '{}';
+    const obj: Record<string, any> = {};
+    for (const [k, v] of m.entries()) {
+        obj[k] = v instanceof Date ? v.toISOString() : v;
+    }
+    return JSON.stringify(obj);
 }
 
 export class User {
@@ -119,7 +80,6 @@ export class User {
         this.awards = Array.isArray(data.awards) ? data.awards : (typeof data.awards === 'string' ? JSON.parse(data.awards || '[]') : []);
         this.newAwardsToNotify = Array.isArray(data.newAwardsToNotify) ? data.newAwardsToNotify : (typeof data.newAwardsToNotify === 'string' ? JSON.parse(data.newAwardsToNotify || '[]') : []);
 
-        // Maps for legacy support
         const rawLevels = typeof data.levels === 'string' ? JSON.parse(data.levels || '{}') : (data.levels || {});
         this.levels = rawLevels instanceof Map ? rawLevels : new Map(Object.entries(rawLevels));
 
@@ -161,91 +121,61 @@ export class User {
     }
 
     async save(): Promise<this> {
-        const db = getD1();
-        const levelsJson = JSON.stringify(Object.fromEntries(this.levels.entries()));
-        const startJson = JSON.stringify(Object.fromEntries(this.indukStartTimes.entries()));
-        const endJson = JSON.stringify(Object.fromEntries(this.indukEndTimes.entries()));
-        const subsJson = JSON.stringify(Object.fromEntries(this.dailySubmissions.entries()));
+        const db = await resolveDb();
+        const levelsJson = serializeMap(this.levels);
+        const startJson = serializeMap(this.indukStartTimes);
+        const endJson = serializeMap(this.indukEndTimes);
+        const subsJson = serializeMap(this.dailySubmissions);
         const awardsJson = JSON.stringify(this.awards || []);
         const newAwardsJson = JSON.stringify(this.newAwardsToNotify || []);
 
-        if (db) {
-            await db.prepare(`
-                UPDATE users SET
-                    username = ?, password = ?, role = ?, fullName = ?, email = ?, kelas = ?,
-                    schoolName = ?, photoUrl = ?, level = ?, levels = ?, indukStartTimes = ?,
-                    indukEndTimes = ?, dailySubmissions = ?, awards = ?, newAwardsToNotify = ?,
-                    updatedAt = datetime('now')
-                WHERE id = ?
-            `).bind(
-                this.username, this.password, this.role, this.fullName, this.email, this.kelas,
-                this.schoolName, this.photoUrl, this.level, levelsJson, startJson,
-                endJson, subsJson, awardsJson, newAwardsJson, this.id
-            ).run();
-        } else {
-            memoryStore.set(this.username, {
-                id: this.id,
-                username: this.username,
-                password: this.password,
-                role: this.role,
-                fullName: this.fullName,
-                email: this.email,
-                kelas: this.kelas,
-                schoolName: this.schoolName,
-                photoUrl: this.photoUrl,
-                level: this.level,
-                levels: levelsJson,
-                indukStartTimes: startJson,
-                indukEndTimes: endJson,
-                dailySubmissions: subsJson,
-                awards: awardsJson,
-                newAwardsToNotify: newAwardsJson,
-                updatedAt: new Date().toISOString()
-            });
-        }
+        await db.prepare(`
+            UPDATE users SET
+                username = ?, password = ?, role = ?, fullName = ?, email = ?, kelas = ?,
+                schoolName = ?, photoUrl = ?, level = ?, levels = ?, indukStartTimes = ?,
+                indukEndTimes = ?, dailySubmissions = ?, awards = ?, newAwardsToNotify = ?,
+                updatedAt = datetime('now')
+            WHERE id = ?
+        `).bind(
+            this.username, this.password, this.role, this.fullName || '', this.email || '', this.kelas || '',
+            this.schoolName || '', this.photoUrl || '', this.level || 1, levelsJson, startJson,
+            endJson, subsJson, awardsJson, newAwardsJson, this.id
+        ).run();
+
         return this;
     }
 
-    static async findOne(query: { username?: string; role?: string }): Promise<User | null> {
-        const db = getD1();
-        if (db && query.username) {
-            const row = await db.prepare('SELECT * FROM users WHERE username = ?').bind(query.username).first();
-            return row ? new User(row) : null;
-        }
-        if (query.username) {
-            const row = memoryStore.get(query.username);
-            return row ? new User(row) : null;
-        }
-        return null;
+    static async findOne(query: { id?: string; username?: string; role?: string; email?: string }): Promise<User | null> {
+        const db = await resolveDb();
+        const clauses: string[] = [];
+        const params: any[] = [];
+        if (query.id) { clauses.push('id = ?'); params.push(query.id); }
+        if (query.username) { clauses.push('username = ?'); params.push(query.username); }
+        if (query.role) { clauses.push('role = ?'); params.push(query.role); }
+        if (query.email) { clauses.push('email = ?'); params.push(query.email); }
+        if (clauses.length === 0) return null;
+
+        const row = await db.prepare(`SELECT * FROM users WHERE ${clauses.join(' AND ')} LIMIT 1`).bind(...params).first();
+        return row ? new User(row) : null;
     }
 
     static async findById(id: string): Promise<User | null> {
-        const db = getD1();
-        if (db) {
-            const row = await db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
-            return row ? new User(row) : null;
-        }
-        for (const u of memoryStore.values()) {
-            if (u.id === id) return new User(u);
-        }
-        return null;
+        const db = await resolveDb();
+        const row = await db.prepare('SELECT * FROM users WHERE id = ?').bind(id).first();
+        return row ? new User(row) : null;
     }
 
     static find(query: { role?: string } = {}): any {
         let selectFields = '';
         const run = async () => {
-            const db = getD1();
+            const db = await resolveDb();
             let rows: any[] = [];
-            if (db) {
-                if (query.role) {
-                    const res = await db.prepare('SELECT * FROM users WHERE role = ? ORDER BY createdAt DESC').bind(query.role).all();
-                    rows = res.results || [];
-                } else {
-                    const res = await db.prepare('SELECT * FROM users ORDER BY createdAt DESC').all();
-                    rows = res.results || [];
-                }
+            if (query.role) {
+                const res = await db.prepare('SELECT * FROM users WHERE role = ? ORDER BY createdAt DESC').bind(query.role).all();
+                rows = res.results || [];
             } else {
-                rows = Array.from(memoryStore.values()).filter(u => !query.role || u.role === query.role);
+                const res = await db.prepare('SELECT * FROM users ORDER BY createdAt DESC').all();
+                rows = res.results || [];
             }
 
             const users = rows.map(r => new User(r));
@@ -278,43 +208,30 @@ export class User {
     }
 
     static async create(data: any): Promise<User> {
-        const db = getD1();
+        const db = await resolveDb();
         const id = data.id || `user-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
         const user = new User({ ...data, id });
 
-        const levelsJson = JSON.stringify(Object.fromEntries(user.levels.entries()));
-        const startJson = JSON.stringify(Object.fromEntries(user.indukStartTimes.entries()));
-        const endJson = JSON.stringify(Object.fromEntries(user.indukEndTimes.entries()));
-        const subsJson = JSON.stringify(Object.fromEntries(user.dailySubmissions.entries()));
+        const levelsJson = serializeMap(user.levels);
+        const startJson = serializeMap(user.indukStartTimes);
+        const endJson = serializeMap(user.indukEndTimes);
+        const subsJson = serializeMap(user.dailySubmissions);
         const awardsJson = JSON.stringify(user.awards || []);
         const newAwardsJson = JSON.stringify(user.newAwardsToNotify || []);
 
-        if (db) {
-            await db.prepare(`
-                INSERT INTO users (id, username, password, role, fullName, email, kelas, schoolName, photoUrl, level, levels, indukStartTimes, indukEndTimes, dailySubmissions, awards, newAwardsToNotify)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            `).bind(
-                id, user.username, user.password, user.role, user.fullName || '', user.email || '',
-                user.kelas || '', user.schoolName || '', user.photoUrl || '', user.level || 1,
-                levelsJson, startJson, endJson, subsJson, awardsJson, newAwardsJson
-            ).run();
-        }
-
-        memoryStore.set(user.username, {
-            ...data,
-            id,
-            levels: levelsJson,
-            indukStartTimes: startJson,
-            indukEndTimes: endJson,
-            dailySubmissions: subsJson,
-            awards: awardsJson,
-            newAwardsToNotify: newAwardsJson
-        });
+        await db.prepare(`
+            INSERT INTO users (id, username, password, role, fullName, email, kelas, schoolName, photoUrl, level, levels, indukStartTimes, indukEndTimes, dailySubmissions, awards, newAwardsToNotify)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `).bind(
+            id, user.username, user.password, user.role, user.fullName || '', user.email || '',
+            user.kelas || '', user.schoolName || '', user.photoUrl || '', user.level || 1,
+            levelsJson, startJson, endJson, subsJson, awardsJson, newAwardsJson
+        ).run();
 
         return user;
     }
 
-    static findByIdAndUpdate(id: string, updateData: any, options?: any): any {
+    static findByIdAndUpdate(id: string, updateData: any, _options?: any): any {
         let selectFields = '';
         const run = async () => {
             const user = await User.findById(id);
@@ -322,14 +239,30 @@ export class User {
 
             if (updateData.username !== undefined) user.username = updateData.username;
             if (updateData.password !== undefined) user.password = updateData.password;
+            if (updateData.role !== undefined) user.role = updateData.role;
             if (updateData.fullName !== undefined) user.fullName = updateData.fullName;
             if (updateData.email !== undefined) user.email = updateData.email;
             if (updateData.kelas !== undefined) user.kelas = updateData.kelas;
             if (updateData.schoolName !== undefined) user.schoolName = updateData.schoolName;
             if (updateData.photoUrl !== undefined) user.photoUrl = updateData.photoUrl;
+            if (updateData.level !== undefined) user.level = updateData.level;
+            if (updateData.awards !== undefined) user.awards = updateData.awards;
+            if (updateData.newAwardsToNotify !== undefined) user.newAwardsToNotify = updateData.newAwardsToNotify;
             if (updateData.levels !== undefined) {
                 const raw = updateData.levels;
                 user.levels = raw instanceof Map ? raw : new Map(Object.entries(raw || {}));
+            }
+            if (updateData.indukStartTimes !== undefined) {
+                const raw = updateData.indukStartTimes;
+                user.indukStartTimes = raw instanceof Map ? raw : new Map(Object.entries(raw || {}));
+            }
+            if (updateData.indukEndTimes !== undefined) {
+                const raw = updateData.indukEndTimes;
+                user.indukEndTimes = raw instanceof Map ? raw : new Map(Object.entries(raw || {}));
+            }
+            if (updateData.dailySubmissions !== undefined) {
+                const raw = updateData.dailySubmissions;
+                user.dailySubmissions = raw instanceof Map ? raw : new Map(Object.entries(raw || {}));
             }
 
             await user.save();
@@ -358,16 +291,10 @@ export class User {
     }
 
     static async findByIdAndDelete(id: string): Promise<boolean> {
-        const db = getD1();
-        if (db) {
-            await db.prepare('DELETE FROM users WHERE id = ?').bind(id).run();
-        }
-        for (const [k, v] of memoryStore.entries()) {
-            if (v.id === id) {
-                memoryStore.delete(k);
-                break;
-            }
-        }
+        const db = await resolveDb();
+        const existing = await User.findById(id);
+        if (!existing) return false;
+        await db.prepare('DELETE FROM users WHERE id = ?').bind(id).run();
         return true;
     }
 }

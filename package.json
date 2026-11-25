@@ -5,14 +5,16 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "build:worker": "npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion",
-        "deploy": "npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion && wrangler deploy",
-        "db:setup": "sqlite3 local.db < schema.sql",
+        "build:worker": "CLOUDFLARE_WORKER=1 npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion",
+        "deploy": "CLOUDFLARE_WORKER=1 npx -y @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion && wrangler deploy",
+        "db:setup": "node scripts/setup-local-db.mjs",
+        "db:reset": "node scripts/setup-local-db.mjs --reset",
         "db:seed": "npx wrangler d1 execute school-games-db --local --file=schema.sql",
         "start": "next start",
         "lint": "next lint"
     },
     "dependencies": {
+        "@libsql/client": "^0.18.0",
         "bcryptjs": "^2.4.3",
         "next": "^14.2.35",
         "next-auth": "^4.24.5",

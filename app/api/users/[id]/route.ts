@@ -24,6 +24,9 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
     }
 
     const updatedUser = await User.findByIdAndUpdate(params.id, updateData, { new: true }).select('-password');
+    if (!updatedUser) {
+        return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
     return NextResponse.json(updatedUser);
 }
 
@@ -34,6 +37,9 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
     }
 
     await dbConnect();
-    await User.findByIdAndDelete(params.id);
+    const deleted = await User.findByIdAndDelete(params.id);
+    if (!deleted) {
+        return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
     return NextResponse.json({ message: 'User deleted' });
 }

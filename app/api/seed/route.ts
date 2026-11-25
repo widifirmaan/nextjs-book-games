@@ -5,7 +5,16 @@ import bcrypt from 'bcryptjs';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(req: Request) {
+    const requiredSecret = process.env.SEED_SECRET;
+    if (requiredSecret) {
+        const url = new URL(req.url);
+        const headerSecret = req.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
+        if (headerSecret !== requiredSecret && url.searchParams.get('secret') !== requiredSecret) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+    }
+
     await dbConnect();
 
     try {

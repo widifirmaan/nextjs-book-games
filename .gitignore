@@ -26,6 +26,10 @@ ts-debug.log*
 
 # local env files
 .env*.local
+!.env.example
+
+# local sqlite database
+local.db*
 
 # vercel
 .vercel

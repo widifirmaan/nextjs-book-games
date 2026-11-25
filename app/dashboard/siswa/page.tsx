@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth/next"
+import { redirect } from "next/navigation"
 import { authOptions } from "@/lib/authOptions"
 import User from "@/lib/models/User"
 import dbConnect from "@/lib/mongodb"
@@ -8,6 +9,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function SiswaDashboard() {
     const session = await getServerSession(authOptions)
+    if (!session) {
+        redirect('/login')
+    }
     await dbConnect()
 
     const user = await User.findById((session?.user as any).id)

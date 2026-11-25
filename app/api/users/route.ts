@@ -25,6 +25,9 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
+    if (!body?.username || typeof body.username !== 'string' || !body.username.trim()) {
+        return NextResponse.json({ error: 'Username is required' }, { status: 400 });
+    }
     await dbConnect();
 
     const existingUser = await User.findOne({ username: body.username });

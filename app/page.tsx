@@ -13,7 +13,7 @@ export default function Home() {
             {/* Navigation / Login Button (Hidden in Print) */}
             <div className="fixed inset-0 z-[100] print:hidden flex items-center justify-center md:items-start md:pt-6">
                 <div className="w-full max-w-xs px-4 flex justify-center">
-                    <Link href="/login" className="bg-[#64dd17] hover:bg-[#43a047] text-white font-fredoka font-black py-6 px-12 md:py-4 md:px-10 rounded-full border-b-8 border-[#1b5e20] shadow-2xl text-2xl md:text-xl uppercase tracking-wider transition-all hover:scale-110 active:border-b-0 active:translate-y-2 flex items-center gap-2 whitespace-nowrap">
+                    <Link href="/login" className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-fredoka font-black py-6 px-12 md:py-4 md:px-10 rounded-full border-b-8 border-[#1b5e20] shadow-2xl text-2xl md:text-xl uppercase tracking-wider transition-all hover:scale-110 active:border-b-0 active:translate-y-2 flex items-center gap-2 whitespace-nowrap">
                         Masuk Aplikasi 🚀
                     </Link>
                 </div>

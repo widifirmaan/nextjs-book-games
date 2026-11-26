@@ -31,11 +31,11 @@ function LoginForm() {
     }
 
     return (
-        <div className="body-login min-h-screen">
+        <main className="body-login min-h-screen">
             <div className="login-panel game-panel">
-                <div className="header-ribbon">
+                <h1 className="header-ribbon">
                     Login
-                </div>
+                </h1>
 
                 {error && (
                     <div className="error-message text-center mb-4">
@@ -45,8 +45,9 @@ function LoginForm() {
 
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label className="game-label">Username</label>
+                        <label htmlFor="login-username" className="game-label">Username</label>
                         <input
+                            id="login-username"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -55,8 +56,9 @@ function LoginForm() {
                         />
                     </div>
                     <div className="mb-3">
-                        <label className="game-label">Password</label>
+                        <label htmlFor="login-password" className="game-label">Password</label>
                         <input
+                            id="login-password"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -78,7 +80,7 @@ function LoginForm() {
                     </Link>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

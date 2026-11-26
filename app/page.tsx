@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: '/',
+    },
+}
 
 export default function Home() {
     return (
@@ -166,7 +173,7 @@ export default function Home() {
                     font-family: var(--font-fredoka);
                 }
 
-                h1 {
+                h1, .portfolio-section-h1 {
                     font-family: var(--font-fredoka);
                     font-size: 4.5rem;
                     color: var(--panel-bg);
@@ -175,7 +182,7 @@ export default function Home() {
                     margin-bottom: 20px;
                 }
 
-                h2 {
+                h2:not(.portfolio-section-h1), .portfolio-card-h3 {
                     font-family: var(--font-fredoka);
                     font-size: 2rem;
                     color: var(--btn-yellow);
@@ -225,7 +232,7 @@ export default function Home() {
                 <div className="layout-split">
                     <div className="flex flex-col gap-4">
                         <div className="header-ribbon-portfolio !m-0 !text-sm">Student Experience</div>
-                        <h1 className="!text-5xl !text-left">Student Dashboard</h1>
+                        <h2 className="portfolio-section-h1 !text-5xl !text-left">Student Dashboard</h2>
                         <div className="game-panel-portfolio">
                             <p className="text-lg font-bold leading-relaxed">
                                 Antarmuka ceria yang memudahkan siswa memantau progres, melihat skor, dan memilih level permainan dengan navigasi yang intuitif.
@@ -247,7 +254,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="header-ribbon-portfolio !m-0 !text-sm">Administrative Tools</div>
-                        <h1 className="!text-5xl !text-left">Teacher Panel</h1>
+                        <h2 className="portfolio-section-h1 !text-5xl !text-left">Teacher Panel</h2>
                         <div className="game-panel-portfolio">
                             <p className="text-lg font-bold leading-relaxed">
                                 Kendali penuh bagi pengajar untuk memantau aktivitas siswa, menganalisis jawaban detail, dan mengekspor laporan ke Excel.
@@ -263,7 +270,7 @@ export default function Home() {
                 <div className="layout-split">
                     <div className="flex flex-col gap-4">
                         <div className="header-ribbon-portfolio !m-0 !text-sm">Interactive Content</div>
-                        <h1 className="!text-5xl !text-left">30 Unique Levels</h1>
+                        <h2 className="portfolio-section-h1 !text-5xl !text-left">30 Unique Levels</h2>
                         <div className="game-panel-portfolio">
                             <p className="text-lg font-bold leading-relaxed">
                                 Koleksi 30 level tantangan yang mencakup Word Search, Drawing, dan Refleksi untuk mendukung pengembangan diri siswa.
@@ -281,7 +288,7 @@ export default function Home() {
             <section className="portfolio-page">
                 <div className="flex flex-col h-full items-center justify-between py-10">
                     <div className="header-ribbon-portfolio">Responsive Experience</div>
-                    <h1 className="!text-5xl">Learn Anywhere, Anytime</h1>
+                    <h2 className="portfolio-section-h1 !text-5xl">Learn Anywhere, Anytime</h2>
                     <div className="flex gap-8 items-center justify-center flex-1 w-full">
                         <div className="w-1/3 screenshot-frame transform -rotate-3">
                             <img src="/screenshots/Mobile Login Page.png" alt="Mobile Login" />
@@ -290,7 +297,7 @@ export default function Home() {
                             <img src="/screenshots/Mobile Student Dashboard Page.png" alt="Mobile Dashboard" />
                         </div>
                         <div className="w-1/4 game-panel-portfolio">
-                            <p className="font-bold text-center italic">"Optimized for every screen size with seamless performance."</p>
+                            <p className="font-bold text-center italic">&ldquo;Optimized for every screen size with seamless performance.&rdquo;</p>
                         </div>
                     </div>
                 </div>
@@ -305,7 +312,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="header-ribbon-portfolio !m-0 !text-sm">Security</div>
-                        <h1 className="!text-5xl !text-left">Secure Gateway</h1>
+                        <h2 className="portfolio-section-h1 !text-5xl !text-left">Secure Gateway</h2>
                         <div className="game-panel-portfolio">
                             <p className="text-lg font-bold leading-relaxed">
                                 Sistem autentikasi yang aman menggunakan NextAuth, memisahkan peran akses antara Siswa dan Guru dengan perlindungan data maksimal.
@@ -345,10 +352,10 @@ export default function Home() {
             {/* PAGE 09: TECH STACK */}
             <section className="portfolio-page layout-hero">
                 <div className="header-ribbon-portfolio">Modern Technology</div>
-                <h1 className="!text-5xl mb-12">The Power Behind Book Games</h1>
+                <h2 className="portfolio-section-h1 !text-5xl mb-12">The Power Behind Book Games</h2>
                 <div className="grid grid-cols-3 gap-8 w-full max-w-5xl">
                     <div className="game-panel-portfolio">
-                        <h2 className="text-center">FRONTEND</h2>
+                        <h3 className="portfolio-card-h3 text-center">FRONTEND</h3>
                         <ul className="text-sm font-bold list-disc list-inside">
                             <li>Next.js 14</li>
                             <li>TypeScript</li>
@@ -357,7 +364,7 @@ export default function Home() {
                         </ul>
                     </div>
                     <div className="game-panel-portfolio">
-                        <h2 className="text-center">BACKEND</h2>
+                        <h3 className="portfolio-card-h3 text-center">BACKEND</h3>
                         <ul className="text-sm font-bold list-disc list-inside">
                             <li>MongoDB</li>
                             <li>Mongoose</li>
@@ -366,7 +373,7 @@ export default function Home() {
                         </ul>
                     </div>
                     <div className="game-panel-portfolio">
-                        <h2 className="text-center">TOOLS</h2>
+                        <h3 className="portfolio-card-h3 text-center">TOOLS</h3>
                         <ul className="text-sm font-bold list-disc list-inside">
                             <li>Excel Export</li>
                             <li>Mongoose DB</li>
@@ -380,7 +387,7 @@ export default function Home() {
 
             {/* PAGE 10: CLOSING */}
             <section className="portfolio-page layout-hero" style={{ backgroundColor: 'var(--panel-bg)' }}>
-                <h1 style={{ fontSize: '10rem', color: 'white', textShadow: '6px 6px 0 var(--panel-border)' }}>THANKS!</h1>
+                <h2 className="portfolio-section-h1" style={{ fontSize: '10rem', color: 'white', textShadow: '6px 6px 0 var(--panel-border)' }}>THANKS!</h2>
                 <div className="header-ribbon-portfolio !text-2xl">
                     WIDI FIRMAAN | LEAD DEVELOPER
                 </div>
